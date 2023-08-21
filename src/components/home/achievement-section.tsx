@@ -16,9 +16,11 @@ const AchievmentSection = () => {
             src="/trophies/trophy-left-one.png"
             className="h-[202px] absolute left-0 bottom-0"
           />
-          <div className="font-[400] ml-[200px]">
-            <h3 className="text-[64px] text-hijau-400">ASEAN</h3>
-            <span>
+          <div className="font-[400] ml-[200px] relative h-full w-full">
+            <h3 className="text-[64px] text-hijau-400 absolute -top-3">
+              ASEAN
+            </h3>
+            <span className="absolute bottom-2 z-10">
               <h4 className="text-[32px]">level achievements</h4>
               <h5 className="text-[16px] text-hitam-700">(2017 - 2023)</h5>
             </span>
@@ -65,11 +67,15 @@ const AchievmentSection = () => {
               </h4>
             </span>
           </div>
-          <div className="font-[400] mr-[200px]">
-            <h3 className="text-[64px] text-hijau-400">ASIAN</h3>
-            <span>
+          <div className="font-[400] mr-[200px] relative h-full w-full flex justify-end">
+            <h3 className="text-[64px] text-hijau-400 absolute -top-3">
+              ASIAN
+            </h3>
+            <span className="absolute bottom-2">
               <h4 className="text-[32px]">level achievements</h4>
-              <h5 className="text-[16px] text-hitam-700">(2017 - 2023)</h5>
+              <h5 className="text-[16px] text-hitam-700 text-right">
+                (2017 - 2023)
+              </h5>
             </span>
           </div>
           <img
@@ -84,9 +90,11 @@ const AchievmentSection = () => {
             src="/trophies/trophy-left-two.png"
             className="h-[182px] absolute left-0 bottom-0"
           />
-          <div className="font-[400] ml-[200px]">
-            <h3 className="text-[64px] text-hijau-400">WORLD</h3>
-            <span>
+          <div className="font-[400] ml-[200px] relative w-full h-full">
+            <h3 className="text-[64px] text-hijau-400 absolute -top-3">
+              WORLD
+            </h3>
+            <span className="bottom-2 absolute">
               <h4 className="text-[32px]">level achievements</h4>
               <h5 className="text-[16px] text-hitam-700">(2017 - 2023)</h5>
             </span>

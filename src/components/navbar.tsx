@@ -20,7 +20,7 @@ const Navbar = () => {
   const router = useRouter();
 
   return (
-    <nav className="w-full h-fit drop-shadow-md">
+    <nav className="w-full h-fit drop-shadow-md sticky top-0 z-50">
       <section className="bg-hitam-50">
         <div className="w-full max-w-[1440px] px-[50px] py-[14px] flex items-center justify-between mx-auto">
           <div className="flex gap-x-[38px] text-[14px] font-[400] text-hitam-800">

@@ -1,10 +1,16 @@
+import dynamic from 'next/dynamic';
+
 import CardEvent from '@/components/event/card';
 import HeadingText from '@/components/ui/heading-text';
+
+const EventCountdown = dynamic(() => import('@/components/event/countdown'), {
+  ssr: false
+});
 
 const EventPage = () => {
   return (
     <div className="w-full bg-white">
-      <div className="py-[20px] flex justify-center border-b border-b-hitam-200">
+      <div className="py-[20px] flex gap-x-[60px] justify-center border-b border-b-hitam-200">
         <div className="flex gap-x-[8px] items-center">
           <h3 className="font-[500] text-[19px]">
             Asian Para Games Hangzhou 2023
@@ -12,6 +18,7 @@ const EventPage = () => {
           <h3 className="font-[500] text-[19px]">-</h3>
           <h3 className="text-[14px] font-[400]">22 - 28 October, 2023</h3>
         </div>
+        <EventCountdown />
       </div>
       <div className="py-[60px] px-[50px] w-full max-w-[1440px] mx-auto flex flex-col gap-y-[60px]">
         <section>
