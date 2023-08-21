@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
 
+import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import { isDevMode } from '@/lib/utils';
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={devMode ? 'debug-screens' : ''}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -82,7 +82,7 @@ const Navbar = () => {
             </div>
             <div className="w-[1px] bg-hitam-400" />
             <Select>
-              <SelectTrigger className="w-[100px] h-[32px] rounded-[16px]">
+              <SelectTrigger className="w-[116px] h-[32px] rounded-[16px]">
                 <SelectValue placeholder="Language" />
               </SelectTrigger>
               <SelectContent>
