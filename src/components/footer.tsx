@@ -14,10 +14,10 @@ const Footer = () => {
           />
           <div className="gap-y-[12px] w-full max-w-[432px]">
             <span className="flex flex-col text-[20px]">
-              <h2 className="font-[700]">
+              <h2 className="font-[700] text-[20px]">
                 OFFICIAL WEBSITE OF THE PARALYMPIC MOVEMENT
               </h2>
-              <h3 className="font-[500] text-hitam-600">
+              <h3 className="font-[500] text-hitam-600 text-[20px]">
                 National Paralympic Committee of Indonesia
               </h3>
             </span>
@@ -26,7 +26,7 @@ const Footer = () => {
               atlet penyandang disabilitas di Indonesia
             </h4>
           </div>
-          <div className="flex flex-col gap-y-[26px] text-[16px] font-[500]">
+          <div className="flex flex-col gap-y-[40px] text-[16px] font-[500]">
             <div className="flex gap-x-[16px] items-center">
               <FaLocationDot size={24} />
               Jl. Ir Sutami 86 Surakarta, Indonesia

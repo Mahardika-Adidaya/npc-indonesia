@@ -1,5 +1,13 @@
+import AchievmentSection from '@/components/home/achievement-section';
+import PartnersSection from '@/components/home/partners-section';
+
 const HomePage = () => {
-  return <div></div>;
+  return (
+    <>
+      <AchievmentSection />
+      <PartnersSection />
+    </>
+  );
 };
 
 export default HomePage;
