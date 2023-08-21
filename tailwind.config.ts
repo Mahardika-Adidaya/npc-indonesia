@@ -120,7 +120,8 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
       fontFamily: {
-        helveticaNeue: ['Helvetica Neue']
+        helveticaNeue: ['Helvetica Neue'],
+        poppins: ['Poppins']
       }
     }
   },

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
+import Providers from '@/lib/react-query-provider';
 import { isDevMode } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={devMode ? 'debug-screens' : ''}>
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
