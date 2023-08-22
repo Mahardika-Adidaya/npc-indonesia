@@ -10,7 +10,7 @@ const SportPage = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="py-[86px] px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
+      <div className="py-[86px] px-[51px] w-full max-w-[1440px]  mx-auto flex flex-col">
         <HeadingText text="Paralympic Sport" />
         <div className="w-full grid grid-cols-4 gap-y-[40px]">
           {/* <RenderIf isTrue={!isLoadingSportsCategory}>
