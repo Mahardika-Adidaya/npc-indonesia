@@ -21,9 +21,11 @@ const SportCardOne: FC<SportCardProps> = ({ name, image, className }) => {
         width={270}
         alt={name}
         src={image}
-        className="rounded-[16px] h-[270px] w-[270px] object-cover"
+        className="rounded-[16px] h-[139px] xl:h-[270px] w-[139px] xl:w-[270px] object-cover"
       />
-      <h3 className="text-center font-[500] text-[24px]">{name}</h3>
+      <h3 className="text-center font-[500] max-w-[139px] xl:max-w-[270px] text-[16px] xl:text-[24px]">
+        {name}
+      </h3>
     </Link>
   );
 };

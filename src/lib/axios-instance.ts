@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
+const apiAmock = axios.create({
   baseURL: 'https://amock.io/api/randibprana/'
 });
 
-export default axiosInstance;
+export default apiAmock;

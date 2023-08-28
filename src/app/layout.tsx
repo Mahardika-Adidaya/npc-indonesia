@@ -3,11 +3,14 @@ import '@/styles/globals.css';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
-import Footer from '@/components/footer';
 import Providers from '@/lib/react-query-provider';
 import { isDevMode } from '@/lib/utils';
 
 const Navbar = dynamic(() => import('@/components/navbar'), {
+  ssr: false
+});
+
+const Footer = dynamic(() => import('@/components/footer'), {
   ssr: false
 });
 
