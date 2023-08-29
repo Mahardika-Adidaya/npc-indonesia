@@ -1,10 +1,10 @@
 const Maintenance = () => {
   return (
-    <main className="w-screen h-auto bg-white overflow-auto flex items-center py-10">
+    <main className="bg-white flex items-center justify-center h-screen">
       <img
         src="/maintenance.png"
         alt="Maintenance"
-        className="h-full h-full mx-auto"
+        className="mx-auto my-auto"
       />
     </main>
   );
