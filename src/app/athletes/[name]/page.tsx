@@ -1,41 +1,38 @@
-import Image from 'next/image';
 import { FaLocationDot } from 'react-icons/fa6';
 
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const DetailAthletePage = () => {
   return (
-    <div className="w-full bg-white">
-      <div className="py-[86px] px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
-        <div className="flex justify-between w-full">
+    <div className="w-full bg-white overflow-hidden">
+      <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
+        <div className="flex w-full flex-col xl:flex-row max-lg:gap-y-[18px] xl:justify-between">
           <div className="flex gap-x-[24px]">
-            <Image
+            <img
               src="/athletes/para-badminton/qonitah-ikhtiar-syakuroh.jpg"
-              height={294}
-              width={294}
               alt="Athlete"
-              className="rounded-full h-[294px] w-[294px] bg-cover outline outline-hitam-50"
+              className="rounded-full h-[128px] w-[128px] md:h-[168px] md:w-[168px] xl:h-[294px] xl:w-[294px] bg-cover outline outline-hitam-50"
             />
             <div className="max-w-[361px]">
               <h1
                 className={cn(
-                  'text-[64px] font-[400]',
+                  'text-[28px] md:text-[42px] leading-[60px] xl:text-[64px] font-[400]',
                   fontAhrefs400.className
                 )}
               >
                 Leani Ratri Oktila
               </h1>
-              <span className="text-[24px] font-[500] text-hitam-400 flex gap-x-[16px] items-center">
+              <span className="text-[10px] md:text-[16px] xl:text-[24px] font-[500] text-hitam-400 flex gap-x-[16px] items-center xl:mt-[14px]">
                 <FaLocationDot />
                 Bangkinang, Riau, Indonesia
               </span>
-              <span className="bg-biru-900 w-fit flex px-[20px] text-[20px] py-[12px] rounded-[12px] text-white mt-[32px]">
+              <span className="bg-biru-900 w-fit flex px-[12px] xl:px-[20px] text-[10px] md:text-[12px] xl:text-[20px] py-1 xl:py-[12px] rounded-[12px] text-white mt-[12px] xl:mt-[32px]">
                 Para Badminton
               </span>
             </div>
           </div>
           <div className="flex flex-col gap-y-[12px]">
-            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-[502px]">
+            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
               Medals
               <div className="flex items-center gap-x-[36px] w-2/3">
                 <div className="w-[40px] text-[12px] h-[40px] rounded-full bg-[#FFD700] flex items-center justify-center">
@@ -49,7 +46,7 @@ const DetailAthletePage = () => {
                 </div>
               </div>
             </div>
-            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-[502px]">
+            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
               Date of Birth
               <div
                 className={cn(
@@ -60,7 +57,7 @@ const DetailAthletePage = () => {
                 1991
               </div>
             </div>
-            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-[502px]">
+            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
               Debute
               <div
                 className={cn(
@@ -71,7 +68,7 @@ const DetailAthletePage = () => {
                 2014 : Asian Para Games Incheon Korea
               </div>
             </div>
-            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-[502px]">
+            <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
               Class
               <div
                 className={cn(
@@ -84,11 +81,16 @@ const DetailAthletePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-x-[64px] mt-[91px]">
-          <h2 className={cn(fontAhrefs400.className, 'text-[36px]')}>
+        <div className="flex flex-col gap-y-5 xl:flex-row gap-x-[64px] mt-[32px] xl:mt-[91px]">
+          <h2
+            className={cn(
+              fontAhrefs400.className,
+              'text-[20px] md:text-[28px] xl:text-[36px]'
+            )}
+          >
             Biography
           </h2>
-          <p className="pr-[120px] text-justify text-[24px]">
+          <p className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]">
             Initially, Leani played badminton as a regular athlete from the age
             of 8, competing in national-level tournaments since 1999. However,
             in 2011, Leani had a motorcycle accident which resulted in a broken
@@ -133,11 +135,16 @@ const DetailAthletePage = () => {
             final match.
           </p>
         </div>
-        <div className="flex gap-x-[123px] mt-[91px]">
-          <h2 className={cn(fontAhrefs400.className, 'text-[36px] w-[227px]')}>
+        <div className="flex flex-col gap-y-5 xl:flex-row gap-x-[64px] mt-[32px] xl:mt-[91px]">
+          <h2
+            className={cn(
+              fontAhrefs400.className,
+              'text-[20px] md:text-[28px] xl:text-[36px]'
+            )}
+          >
             Result
           </h2>
-          <p className="pr-[120px] text-justify text-[24px]">
+          <p className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]">
             Initially, Leani played badminton as a regular athlete from the age
             Silver Medal 4 Nations Para Badminton International 2023 WD - SL 3 -
             SU 5 Gold Medal 4 Nations Para Badminton International 2023 XD - SL
