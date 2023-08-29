@@ -19,9 +19,9 @@ const AthleteProfile: FC<AthleteProfileProps> = ({ src, name, url }) => {
         alt="Athlete"
         width={188}
         height={188}
-        className="w-[188px] h-[188px] rounded-full object-cover shadow-md border-hitam-100 border"
+        className="w-[98px] h-[98px] xl:w-[188px] xl:h-[188px] rounded-full object-cover shadow-md border-hitam-100 border"
       />
-      <h3 className="font-[500] text-[20px]">{name}</h3>
+      <h3 className="font-[500] text-[10px] xl:text-[20px]">{name}</h3>
     </Link>
   );
 };

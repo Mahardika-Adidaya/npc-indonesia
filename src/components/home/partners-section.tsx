@@ -1,52 +1,49 @@
 'use client';
 
-import Image from 'next/image';
-import Slider from 'react-slick';
+import dynamic from 'next/dynamic';
 
 import HeadingText from '@/components/ui/heading-text';
+
+const Slider = dynamic(() => import('react-slick'), {
+  ssr: false
+});
 
 const PartnersSection = () => {
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
     autoplaySpeed: 4000,
-    cssEase: 'linear'
+    cssEase: 'linear',
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false
   };
 
   return (
     <div className="w-full bg-white">
       <div className="py-[70px] px-[84px] w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center">
-        <HeadingText text="Our Partners" />
+        <HeadingText>Our Partners</HeadingText>
         <Slider
-          className="w-full items-center h-[151px] gap-x-[46px] overflow-hidden"
+          className="w-full items-center h-fit gap-x-[46px] flex overflow-hidden bg-red-500"
           {...settings}
         >
-          <Image
+          <img
             src="/companies/logo-konect.png"
             alt="Konect"
-            height={86}
-            width={272}
+            className="h-[151px]"
           />
-          <Image
+          <img
             src="/companies/logo-bayan-resources.png"
             alt="Bayan Resources"
-            height={94}
-            width={393}
+            className="h-[151px]"
           />
-          <Image
+          <img
             src="/companies/logo-bayan-peduli.png"
             alt="Bayan Peduli"
-            height={86}
-            width={69}
-          />
-          <Image
-            src="/companies/logo-konect.png"
-            alt="Konect"
-            height={86}
-            width={272}
+            className="h-[151px]"
           />
         </Slider>
       </div>

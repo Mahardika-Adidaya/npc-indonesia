@@ -1,3 +1,4 @@
+import Player from '@/components/player';
 import ArticleSection from '@/components/sport/article-section';
 import SportCardTwo from '@/components/sport/card-two';
 import { cn, fontAhrefs400 } from '@/lib/utils';
@@ -93,6 +94,14 @@ const SportCategoryPage = () => {
         >
           Video You Might Like
         </h1>
+        <div className="flex justify-center mb-[46px] mt-[18px]">
+          <Player
+            url={[
+              'https://youtu.be/EuiRfzRu17c',
+              'https://youtu.be/77s99NET9Mw'
+            ]}
+          />
+        </div>
       </section>
     </div>
   );

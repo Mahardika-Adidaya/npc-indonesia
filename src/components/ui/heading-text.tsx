@@ -1,20 +1,20 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 interface HeadingTextProps {
-  text: string;
+  children: ReactNode;
 }
 
-const HeadingText: FC<HeadingTextProps> = ({ text }) => {
+const HeadingText: FC<HeadingTextProps> = ({ children }) => {
   return (
     <h2
       className={cn(
-        'text-merah-500 underline decoration-biru-600 text-[48px] font-[400] decoration-8 mb-[92px]',
+        'text-merah-500 underline decoration-biru-600 text-[20px] xl:text-[64px] font-[400] decoration-2 xl:decoration-8 mb-5 xl:mb-[40px]',
         fontAhrefs400.className
       )}
     >
-      {text}
+      {children}
     </h2>
   );
 };

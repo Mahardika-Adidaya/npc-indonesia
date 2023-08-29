@@ -16,6 +16,7 @@ const Player: FC<PlayerProps> = ({ url }) => {
     <>
       <ReactPlayer
         url={url}
+        controls={true}
         playing={true}
         width={1340}
         height={657}

@@ -19,7 +19,7 @@ const AthletesSection: FC<AthletesSectionProps> = ({ category, datas }) => {
       >
         {category}
       </span>
-      <div className="w-full grid grid-cols-3 xl:grid-cols-5 border-b border-hitam-100 gap-y-[36px] py-[36px]">
+      <div className="w-full grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 border-b border-hitam-100 gap-y-[36px] py-[36px]">
         {datas
           ? datas.map((data: any) => (
               <AthleteProfile

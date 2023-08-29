@@ -20,10 +20,10 @@ const EventCountdown = () => {
   }, []);
 
   return (
-    <div className="w-[130px] flex flex-col ">
+    <div className="w-[100px] xl:w-[130px] flex flex-col">
       <div
         className={cn(
-          'font-helveticaNeue font-[700] w-full text-[24px] flex justify-between'
+          'font-helveticaNeue font-[700] space-x-2 w-full text-[14px] xl:text-[24px] flex justify-between'
         )}
       >
         <span>{timeBetween.days()}</span>
@@ -34,11 +34,11 @@ const EventCountdown = () => {
         <span>:</span>
         <span>{timeBetween.seconds()}</span>
       </div>
-      <p className="flex justify-between font-[400] text-[14px]">
+      <p className="flex font-[400] text-[10px] xl:text-[14px]">
         <span>Days</span>
-        <span>Hrs</span>
-        <span>Min</span>
-        <span>Sec</span>
+        <span className="ml-2 xl:ml-3">Hrs</span>
+        <span className="ml-[18px] xl:ml-[24px]">Min</span>
+        <span className="ml-[18px] xl:ml-5">Sec</span>
       </p>
     </div>
   );
