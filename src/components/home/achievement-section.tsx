@@ -6,41 +6,43 @@ const AchievmentSection = () => {
       style={{ backgroundImage: `url('/bg-achievment-section.png')` }}
       className={cn('w-full font-[400] bg-cover', fontAhrefs400.className)}
     >
-      <div className="w-full max-w-[1440px] mx-auto px-[50px] py-[60px] flex flex-col gap-y-[70px]">
-        <h2 className="text-white font-[400] text-[36px]">
+      <div className="w-full max-w-[1440px] mx-auto px-[8px] lg:px-[50px] md:px-[30px] py-[24px] md:py-[60px] flex flex-col gap-y-[70px]">
+        <h2 className="text-white font-[400] text-[16px] md:text-[36px]">
           Championship Achievement
         </h2>
-        <section className="w-full h-[140px] bg-white px-[92px] flex justify-between items-center rounded-[16px] relative">
+        <section className="w-full h-[140px] bg-white px-[92px] flex flex-col xl:flex-row justify-between items-center rounded-[16px] relative">
           <img
             alt="Trophy"
             src="/trophies/trophy-left-one.png"
-            className="h-[202px] absolute left-0 bottom-0"
+            className="h-[75px] md:h-[202px] absolute left-0 bottom-1/2 md:bottom-0"
           />
-          <div className="font-[400] ml-[200px] relative h-full w-full">
-            <h3 className="text-[64px] text-hijau-400 absolute -top-3">
+          <div className="font-[400] xl:ml-[200px] relative h-full w-full">
+            <h3 className="text-[20px] md:text-[64px] text-hijau-400 absolute top-0 xl:-top-3">
               ASEAN
             </h3>
             <span className="absolute bottom-2 z-10">
-              <h4 className="text-[32px]">level achievements</h4>
-              <h5 className="text-[16px] text-hitam-700">(2017 - 2023)</h5>
+              <h4 className="text-[14px] md:text-[32px]">level achievements</h4>
+              <h5 className="text-[8px] md:text-[16px] text-hitam-700">
+                (2017 - 2023)
+              </h5>
             </span>
           </div>
           <div className="flex gap-x-[98px]">
             <span>
-              <h3 className="text-[48px]">459</h3>
-              <h4 className="text-[16px] font-[700] font-helveticaNeue text-hitam-700">
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">459</h3>
+              <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
               </h4>
             </span>
             <span>
-              <h3 className="text-[48px]">367</h3>
-              <h4 className="text-[16px] font-[700] font-helveticaNeue text-hitam-700">
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">367</h3>
+              <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
               </h4>
             </span>
             <span>
-              <h3 className="text-[48px]">251</h3>
-              <h4 className="text-[16px] font-[700] font-helveticaNeue text-hitam-700">
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">251</h3>
+              <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
               </h4>
             </span>

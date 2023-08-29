@@ -14,12 +14,12 @@ const ImageSlider = () => {
           </h1>
           <div className="text-[8px] xl:text-[16px] flex gap-x-[8px] items-center">
             <h4 className="font-[400]">9 August 2023</h4>
-            <span className="w-[6px] h-[6px] rounded-full bg-white" />
+            <span className="w-1 h-1 xl:w-[6px] xl:h-[6px] rounded-full bg-white self-center" />
             <h4 className="font-[500]">General News</h4>
           </div>
         </div>
       </div>
-      <div className="flex flex-row xl:flex-col flex-wrap justify-around">
+      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-1 pb-2">
         <CardImageSlider />
         <CardImageSlider />
         <CardImageSlider />

@@ -24,7 +24,7 @@ const PartnersSection = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="py-[70px] px-[84px] w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center">
+      <div className="py-[24px] md:py-[70px] py-2 md:px-[84px] w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center">
         <HeadingText>Our Partners</HeadingText>
         <Slider
           className="w-full items-center h-fit gap-x-[46px] flex overflow-hidden bg-red-500"
