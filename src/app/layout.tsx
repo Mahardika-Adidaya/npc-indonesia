@@ -3,8 +3,10 @@ import '@/styles/globals.css';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
+import Maintenance from '@/components/maintenance';
 import Providers from '@/lib/react-query-provider';
-import { isDevMode } from '@/lib/utils';
+import RenderIf from '@/lib/render-if';
+import { isDevMode, isMaintenance } from '@/lib/utils';
 
 const Navbar = dynamic(() => import('@/components/navbar'), {
   ssr: false
@@ -26,15 +28,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const devMode = isDevMode();
+  const maintenance = isMaintenance();
   return (
     <html lang="en">
-      <body className={devMode ? 'debug-screens' : ''}>
-        <Providers>
-          <Navbar />
-          {children}
-          <Footer />
-        </Providers>
-      </body>
+      <RenderIf isTrue={maintenance === false}>
+        <body className={devMode ? 'debug-screens' : ''}>
+          <Providers>
+            <Navbar />
+            {children}
+            <Footer />
+          </Providers>
+        </body>
+      </RenderIf>
+      <RenderIf isTrue={maintenance === true}>
+        <Maintenance />
+      </RenderIf>
     </html>
   );
 }

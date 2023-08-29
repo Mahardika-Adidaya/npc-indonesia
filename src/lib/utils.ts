@@ -16,6 +16,16 @@ export function isDevMode() {
   return inDevEnvironment;
 }
 
+export function isMaintenance() {
+  let inMaintenance = false;
+
+  if (process && process.env.MAINTENANCE === 'on') {
+    inMaintenance = true;
+  }
+
+  return inMaintenance;
+}
+
 export const fontAhrefs400 = localFont({
   src: '../../public/fonts/ahrefs/ahrefs-400.ttf',
   weight: '400',
