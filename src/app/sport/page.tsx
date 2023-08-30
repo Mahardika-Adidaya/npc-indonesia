@@ -12,7 +12,7 @@ const SportPage = () => {
     <div className="w-full bg-white overflow-hidden">
       <div className="py-[30px] xl:py-[86px] px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
         <HeadingText>Paralympic Sport</HeadingText>
-        <div className="w-full grid-cols-2 grid xl:grid-cols-4 gap-y-[40px] justify-center">
+        <div className="w-full grid-cols-2 grid md:grid-cols-3 xl:grid-cols-4 gap-y-[40px] justify-between">
           {/* <RenderIf isTrue={!isLoadingSportsCategory}>
             {dataSportsCategory.map((data: any) => {
               return (

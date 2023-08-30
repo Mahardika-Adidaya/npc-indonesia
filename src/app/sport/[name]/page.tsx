@@ -7,28 +7,42 @@ const SportCategoryPage = () => {
   return (
     <div className="flex flex-col gap-y-[45px]">
       <section
-        className="h-[345px] w-full bg-cover"
+        className="h-[144px] xl:h-[345px] w-full bg-cover"
         style={{ backgroundImage: 'url("/para-badminton.png")' }}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-[50px] pt-[116px]">
+        <div className="w-full max-w-[1440px] mx-auto px-2 xl:px-[50px] pt-[31px] xl:pt-[116px]">
           <h1
             className={cn(
-              'text-[64px] font-[400] text-white',
+              'text-[20px] xl:text-[64px] font-[400] text-white',
               fontAhrefs400.className
             )}
           >
             Para Badminton
           </h1>
-          <div className="flex space-x-[80px]">
-            <div className="px-[20px] py-[24.5px] font-[400] flex items-center gap-x-[89px] bg-white w-[502px]">
-              <h3 className="text-[16px]">Olympic Debut</h3>
-              <h3 className={cn('text-[20px]', fontAhrefs400.className)}>
+          <div className="flex flex-col xl:flex-row xl:gap-x-[80px] max-xl:gap-y-2">
+            <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] xl:w-[502px]">
+              <h3 className="text-[9px] md:text-[12px] xl:text-[16px]">
+                Olympic Debut
+              </h3>
+              <h3
+                className={cn(
+                  'text-[9px] xl:text-[20px]',
+                  fontAhrefs400.className
+                )}
+              >
                 Barcelona 1992
               </h3>
             </div>
-            <div className="px-[20px] py-[24.5px] font-[400] flex items-center gap-x-[89px] bg-white w-[502px]">
-              <h3 className="text-[16px]">Most Medals</h3>
-              <h3 className={cn('text-[20px]', fontAhrefs400.className)}>
+            <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] xl:w-[502px]">
+              <h3 className="text-[9px] md:text-[12px] xl:text-[16px]">
+                Most Medals
+              </h3>
+              <h3
+                className={cn(
+                  'text-[9px] xl:text-[20px]',
+                  fontAhrefs400.className
+                )}
+              >
                 Leani Ratri Oktila
               </h3>
             </div>
@@ -36,11 +50,11 @@ const SportCategoryPage = () => {
           <div className="px-[20px] py-[24.5px]"></div>
         </div>
       </section>
-      <section className="w-full max-w-[1440px] mx-auto px-[50px] bg-white">
-        <div className="flex gap-x-[93px]">
+      <section className="px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
+        <div className="flex xl:gap-x-[93px] max-xl:gap-y-4 flex-col xl:flex-row">
           <h1
             className={cn(
-              'text-[64px] font-[400] max-w-[307px]',
+              'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',
               fontAhrefs400.className
             )}
           >
@@ -67,11 +81,11 @@ const SportCategoryPage = () => {
           </div>
         </div>
       </section>
-      <section className="w-full max-w-[1440px] mx-auto px-[50px] bg-white">
-        <div className="flex gap-x-[93px]">
+      <section className="px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
+        <div className="flex xl:gap-x-[93px] max-xl:gap-y-4 flex-col xl:flex-row">
           <h1
             className={cn(
-              'text-[64px] font-[400] max-w-[307px]',
+              'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',
               fontAhrefs400.className
             )}
           >
@@ -85,10 +99,10 @@ const SportCategoryPage = () => {
           </div>
         </div>
       </section>
-      <section className="w-full max-w-[1440px] mx-auto px-[50px] bg-white flex flex-col gap-y-[40px]">
+      <section className="px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
         <h1
           className={cn(
-            'text-[64px] font-[400] max-w-[307px]',
+            'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',
             fontAhrefs400.className
           )}
         >

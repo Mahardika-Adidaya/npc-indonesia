@@ -28,11 +28,7 @@ const CardEvent: FC<CardEventProps> = ({
           fontAhrefs400.className
         )}
       >
-        <img
-          src={image}
-          alt={title}
-          className="h-[102px] xl:h-[123px] w-auto"
-        />
+        <img src={image} alt={title} className="h-[102px] xl:h-[123px]" />
         <div className="gap-y-[12px] xl:gap-y-[16px] h-full flex flex-col justify-center">
           <h4 className="font-[400] text-[20px] xl:text-[24px] leading-6 xl:leading-8">
             {title}

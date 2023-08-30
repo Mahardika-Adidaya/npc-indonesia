@@ -15,8 +15,8 @@ const ArticleSection: FC<ArticleSectionProps> = ({ headText, content }) => {
         fontAhrefs400.className
       )}
     >
-      <h1 className="text-[40px]">{headText}</h1>
-      <p className="text-[24px] font-helveticaNeue">{content}</p>
+      <h1 className="text-[16px] xl:text-[40px]">{headText}</h1>
+      <p className="text-[12px] xl:text-[24px] font-helveticaNeue">{content}</p>
     </section>
   );
 };

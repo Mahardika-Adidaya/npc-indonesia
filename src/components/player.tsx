@@ -9,20 +9,10 @@ interface PlayerProps {
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const Player: FC<PlayerProps> = ({ url }) => {
-  const style = {
-    borderRadius: '20px'
-  };
   return (
-    <>
-      <ReactPlayer
-        url={url}
-        controls={true}
-        playing={true}
-        width={1340}
-        height={657}
-        style={style}
-      />
-    </>
+    <div className="h-[168.8px] md:h-[336px] xl:h-[657px] w-full rounded-[4px] md:rounded-[12px] xl:rounded-[20px] overflow-hidden">
+      <ReactPlayer url={url} playing={true} width="100%" height="100%" />
+    </div>
   );
 };
 
