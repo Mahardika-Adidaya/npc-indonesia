@@ -1,11 +1,11 @@
-import apiAmock from '@/lib/axios-instance';
+import api from '@/lib/axios-instance';
 import { useQuery } from '@tanstack/react-query';
 
 export const useGetSportsCategory = () => {
   const { data, isLoading } = useQuery({
     queryKey: ['get.sports-category'],
     queryFn: async () => {
-      const response = await apiAmock.get('/sports');
+      const response = await api.get('/sports');
       return response;
     }
   });
