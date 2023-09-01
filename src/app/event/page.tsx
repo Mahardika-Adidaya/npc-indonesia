@@ -76,7 +76,7 @@ const EventPage = () => {
         <section className="mt-[30px] w-full">
           <HeadingText>All Paralympic Event</HeadingText>
           <div className="w-full h-[52px] flex flex-col xl:flex-row gap-y-3 justify-between">
-            <div className="flex items-center gap-x-2">
+            <div className="flex items-center max-md:justify-between md:gap-x-2 w-full">
               <h3 className="text-[12px] xl:text-[16px] font-[500]">Filter</h3>
               <Input placeholder="Year..." className="w-[90px] xl:w-[117px]" />
               <div className="w-[15px] xl:w-[24px] rounded-full h-[2px] bg-hitam-100" />
@@ -85,9 +85,12 @@ const EventPage = () => {
                 Apply
               </Button>
             </div>
-            <Input placeholder="Search event name..." className="w-[453px] " />
+            <Input
+              placeholder="Search event name..."
+              className="w-full xl:w-[453px] "
+            />
           </div>
-          <div className="w-[1284px] mx-auto flex mt-[24px] xl:mt-[52px] space-x-[30px] md:space-x-[86px] mt-[52px]">
+          <div className="max-w-full w-full mx-auto flex xl:mt-[52px] space-x-[30px] md:space-x-[86px] mt-[52px]">
             <span>
               <h2
                 className={cn(
@@ -111,6 +114,7 @@ const EventPage = () => {
                 <img
                   src="/dummy/events/event-logo-one.png"
                   className="h-[60px] md:h-[111px]"
+                  alt="Logo Event"
                 />
                 <section className="flex h-full flex-col space-y-2 md:space-y-3">
                   <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
@@ -124,36 +128,38 @@ const EventPage = () => {
                   </h4>
                 </section>
               </Card>
-              <Card className="w-full flex items-center px-[46px] py-[21px] gap-x-[36px]">
+              <Card className="w-full flex items-center px-[10px] md:px-[46px] py-[13px] md:py-[21px] gap-x-[16px] md:gap-x-[36px]">
                 <img
                   src="/dummy/events/event-logo-one.png"
-                  className="h-[111px]"
+                  className="h-[60px] md:h-[111px]"
+                  alt="Logo Event"
                 />
-                <section className="flex flex-col gap-y-2">
-                  <span className="px-[16px] py-[8px] bg-hijau-400 rounded-full w-fit text-[16px] font-[700] text-white">
+                <section className="flex h-full flex-col space-y-2 md:space-y-3">
+                  <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
                     7 October
                   </span>
-                  <h3 className="text-[20px] font-[400]">
+                  <h3 className="text-[10px] md:text-[20px] font-[400]">
                     Incheon, South Korea
                   </h3>
-                  <h4 className="font-[500] text-[28px]">
+                  <h4 className="font-[500] text-[12px] md:text-[28px]">
                     Asian Paralympic Games 2014
                   </h4>
                 </section>
               </Card>
-              <Card className="w-full flex items-center px-[46px] py-[21px] gap-x-[36px]">
+              <Card className="w-full flex items-center px-[10px] md:px-[46px] py-[13px] md:py-[21px] gap-x-[16px] md:gap-x-[36px]">
                 <img
                   src="/dummy/events/event-logo-one.png"
-                  className="h-[111px]"
+                  className="h-[60px] md:h-[111px]"
+                  alt="Logo Event"
                 />
-                <section className="flex flex-col gap-y-2">
-                  <span className="px-[16px] py-[8px] bg-hijau-400 rounded-full w-fit text-[16px] font-[700] text-white">
+                <section className="flex h-full flex-col space-y-2 md:space-y-3">
+                  <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
                     7 October
                   </span>
-                  <h3 className="text-[20px] font-[400]">
+                  <h3 className="text-[10px] md:text-[20px] font-[400]">
                     Incheon, South Korea
                   </h3>
-                  <h4 className="font-[500] text-[28px]">
+                  <h4 className="font-[500] text-[12px] md:text-[28px]">
                     Asian Paralympic Games 2014
                   </h4>
                 </section>
