@@ -35,13 +35,13 @@ const DetailAthletePage = () => {
             <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
               Medals
               <div className="flex items-center gap-x-[36px] w-2/3">
-                <div className="w-[40px] text-[12px] h-[40px] rounded-full bg-[#FFD700] flex items-center justify-center">
+                <div className="w-[40px] text-[12px] h-[40px] rounded-full bg-[#FFD700] flex items-center justify-center pt-[2px]">
                   100
                 </div>
-                <div className="w-[40px] h-[40px] text-[12px] rounded-full bg-[#C0C0C0] flex items-center justify-center">
+                <div className="w-[40px] h-[40px] text-[12px] rounded-full bg-[#C0C0C0] flex items-center justify-center pt-[2px]">
                   100
                 </div>
-                <div className="w-[40px] h-[40px] text-[12px] rounded-full bg-[#CD7F32] flex items-center justify-center">
+                <div className="w-[40px] h-[40px] text-[12px] rounded-full bg-[#CD7F32] flex items-center justify-center pt-[2px]">
                   100
                 </div>
               </div>

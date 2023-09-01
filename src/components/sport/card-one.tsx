@@ -14,7 +14,7 @@ const SportCardOne: FC<SportCardProps> = ({ name, image, className }) => {
   return (
     <Link
       href={`/sport/${convertToSlug(name)}`}
-      className="flex flex-col h-fit w-fit space-y-[16px] justify-center"
+      className="flex flex-col h-fit w-fit gap-y-[16px] justify-center"
     >
       <Image
         height={270}
