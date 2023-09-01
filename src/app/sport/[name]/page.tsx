@@ -5,12 +5,13 @@ import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const SportCategoryPage = () => {
   return (
-    <div className="flex flex-col gap-y-[45px]">
+    <div className="flex flex-col gap-y-[45px] relative">
       <section
         className="h-[144px] xl:h-[345px] w-full bg-cover"
         style={{ backgroundImage: 'url("/para-badminton.png")' }}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-2 xl:px-[50px] pt-[31px] xl:pt-[116px]">
+        <div className="w-full h-full bg-black/40 z-10" />
+        <div className="w-full max-w-[1440px] absolute z-40 top-0 mx-auto px-2 md:px-[30px] xl:px-[50px] pt-[31px] xl:pt-[116px]">
           <h1
             className={cn(
               'text-[20px] xl:text-[64px] font-[400] text-white',
@@ -20,8 +21,8 @@ const SportCategoryPage = () => {
             Para Badminton
           </h1>
           <div className="flex flex-col xl:flex-row xl:gap-x-[80px] max-xl:gap-y-2">
-            <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] xl:w-[502px]">
-              <h3 className="text-[9px] md:text-[12px] xl:text-[16px]">
+            <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] md:w-[280px] xl:w-[502px]">
+              <h3 className="text-[9px] md:text-[12px] xl:text-[16px] w-1/3">
                 Olympic Debut
               </h3>
               <h3
@@ -33,8 +34,8 @@ const SportCategoryPage = () => {
                 Barcelona 1992
               </h3>
             </div>
-            <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] xl:w-[502px]">
-              <h3 className="text-[9px] md:text-[12px] xl:text-[16px]">
+            <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] md:w-[280px] xl:w-[502px]">
+              <h3 className="text-[9px] md:text-[12px] xl:text-[16px] w-1/3 ">
                 Most Medals
               </h3>
               <h3
@@ -50,11 +51,11 @@ const SportCategoryPage = () => {
           <div className="px-[20px] py-[24.5px]"></div>
         </div>
       </section>
-      <section className="px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
+      <section className="px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <div className="flex xl:gap-x-[93px] max-xl:gap-y-4 flex-col xl:flex-row">
           <h1
             className={cn(
-              'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',
+              'text-[20px] md:text-[32px] xl:text-[64px] font-[400] xl:max-w-[307px]',
               fontAhrefs400.className
             )}
           >
@@ -81,7 +82,7 @@ const SportCategoryPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
+      <section className="px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <div className="flex xl:gap-x-[93px] max-xl:gap-y-4 flex-col xl:flex-row">
           <h1
             className={cn(
@@ -99,7 +100,7 @@ const SportCategoryPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-2 xl:px-[51px] w-full max-w-[1440px] mx-auto flex flex-col">
+      <section className="px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <h1
           className={cn(
             'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',

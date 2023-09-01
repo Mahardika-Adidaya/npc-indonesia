@@ -13,7 +13,7 @@ const SportPage = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="py-[30px] xl:py-[86px] px-2 xl:px-[51px] w-full">
           <HeadingText>Paralympic Sport</HeadingText>
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-[40px] w-fit mx-auto gap-x-10 md:gap-x-24 xl:gap-x-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-[40px] w-fit mx-auto gap-x-10 md:gap-x-24 xl:gap-x-16">
             {!isLoadingSportsCategory &&
               dataSportsCategory.map((data: any) => {
                 return (
