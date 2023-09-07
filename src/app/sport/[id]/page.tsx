@@ -1,14 +1,32 @@
+'use client';
+
+import { useParams } from 'next/navigation';
+import { useState } from 'react';
+
 import Player from '@/components/player';
-import ArticleSection from '@/components/sport/article-section';
 import SportCardTwo from '@/components/sport/card-two';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
+import { useGetDetailSport } from '../../../hooks/fetch/sport/useGetDetailSport';
+
 const SportCategoryPage = () => {
+  const { id } = useParams();
+  const [urlVideo, setUrlVideo] = useState([]);
+
+  const { data: dataGetDetailSport } = useGetDetailSport(id);
+
+  console.log('data', dataGetDetailSport);
+
   return (
     <div className="flex flex-col gap-y-[45px] relative">
       <section
-        className="h-[144px] xl:h-[345px] w-full bg-cover"
-        style={{ backgroundImage: 'url("/para-badminton.png")' }}
+        className="h-[144px] xl:h-[345px] w-full bg-cover flex justify-center"
+        style={{
+          backgroundImage: `url(${
+            process.env.NEXT_PUBLIC_API_IMAGE + dataGetDetailSport?.image
+          })`,
+          backgroundSize: 'cover'
+        }}
       >
         <div className="w-full h-full bg-black/40 z-10" />
         <div className="w-full max-w-[1440px] absolute z-40 top-0 mx-auto px-2 md:px-[30px] xl:px-[50px] pt-[31px] xl:pt-[116px]">
@@ -18,7 +36,7 @@ const SportCategoryPage = () => {
               fontAhrefs400.className
             )}
           >
-            Para Badminton
+            {dataGetDetailSport?.name_sport}
           </h1>
           <div className="flex flex-col xl:flex-row xl:gap-x-[80px] max-xl:gap-y-2">
             <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] md:w-[280px] xl:w-[502px]">
@@ -31,7 +49,7 @@ const SportCategoryPage = () => {
                   fontAhrefs400.className
                 )}
               >
-                Barcelona 1992
+                {dataGetDetailSport?.first_debut}
               </h3>
             </div>
             <div className="px-2 xl:px-[20px] py-[6px] xl:py-[24.5px] font-[400] flex items-center gap-x-[28px] xl:gap-x-[89px] bg-white w-[198px] md:w-[280px] xl:w-[502px]">
@@ -44,7 +62,7 @@ const SportCategoryPage = () => {
                   fontAhrefs400.className
                 )}
               >
-                Leani Ratri Oktila
+                {dataGetDetailSport?.most_medal}
               </h3>
             </div>
           </div>
@@ -59,10 +77,13 @@ const SportCategoryPage = () => {
               fontAhrefs400.className
             )}
           >
-            History of Para Badminton
+            History of {dataGetDetailSport?.name_sport}
           </h1>
-          <div className="w-full overflow-x-scroll scrollbar-hide flex flex-col gap-y-[32px]">
-            <ArticleSection
+          <div
+            className="w-full overflow-x-scroll scrollbar-hide flex flex-col gap-y-[32px]"
+            dangerouslySetInnerHTML={{ __html: dataGetDetailSport?.history }}
+          >
+            {/* <ArticleSection
               headText="What is Badminton?"
               content="Badminton is a racket-and-shuttle game played on a court by two players or doubles teams. The sport takes its name from Badminton House—home of the Duke of Beaufort in the English county of Gloucestershire.
               Para badminton has been contested internationally since the 1990s, with the first World Championships taking place in Amersfoort, Netherlands, in 1998. But it was not until 2011 that the sport was brought under the governance of the Badminton World Federation."
@@ -78,7 +99,7 @@ const SportCategoryPage = () => {
             <ArticleSection
               headText="Badminton and the Olympics"
               content="Badminton made its debut as a demonstration sport at the 1972 Olympic Games in Munich. It was not until the 1992 Games in Barcelona that it was officially included on the Olympic programme, with men’s and women’s singles and doubles events. The mixed doubles event made its debut in 1996 at the Atlanta Olympic Games. Since then, the number of events has remained unchanged."
-            />
+            /> */}
           </div>
         </div>
       </section>

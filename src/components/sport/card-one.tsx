@@ -2,18 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { convertToSlug } from '@/lib/utils';
-
 interface SportCardProps {
   image: string;
   name: string;
   className?: string;
+  id: string;
 }
 
-const SportCardOne: FC<SportCardProps> = ({ name, image, className }) => {
+const SportCardOne: FC<SportCardProps> = ({ name, image, className, id }) => {
+  console.log('link', image);
   return (
     <Link
-      href={`/sport/${convertToSlug(name)}`}
+      href={`/sport/${id}`}
       className="flex flex-col h-fit w-fit gap-y-[16px] justify-center"
     >
       <Image
