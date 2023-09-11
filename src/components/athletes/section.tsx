@@ -1,7 +1,7 @@
 import { FC } from 'react'; // Import React and FC from react
 
 import AthleteProfile from '@/components/athletes/profile';
-import { cn, convertToSlug, fontAhrefs400 } from '@/lib/utils';
+import { cn, fontAhrefs400 } from '@/lib/utils';
 
 interface AthletesSectionProps {
   category: string;
@@ -20,16 +20,16 @@ const AthletesSection: FC<AthletesSectionProps> = ({ category, datas }) => {
         {category}
       </span>
       <div className="w-full grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 border-b border-hitam-100 gap-y-[36px] py-[36px]">
-        {datas
-          ? datas.map((data: any) => (
-              <AthleteProfile
-                key={data.id}
-                name={data.name}
-                src={data.avatar}
-                url={`athletes/${convertToSlug(data.name)}`}
-              />
-            ))
-          : null}
+        {datas &&
+          datas.length > 0 &&
+          datas.map((data: any) => (
+            <AthleteProfile
+              key={data?.id}
+              name={data?.athletes_name}
+              src={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+              url={`athletes/${data.id}}`}
+            />
+          ))}
       </div>
     </section>
   );

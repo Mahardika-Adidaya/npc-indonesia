@@ -8,7 +8,6 @@ import { Card } from '@/components/ui/card';
 import HeadingText from '@/components/ui/heading-text';
 import { Input } from '@/components/ui/input';
 import { useGetEvents } from '@/hooks/fetch/useGetEvents';
-import RenderIf from '@/lib/render-if';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const EventCountdown = dynamic(() => import('@/components/event/countdown'), {
@@ -16,7 +15,14 @@ const EventCountdown = dynamic(() => import('@/components/event/countdown'), {
 });
 
 const EventPage = () => {
-  const { data: dataEvents, isLoading: isLoadingEvents } = useGetEvents();
+  const { data: dataEvents, isLoading: isLoadingDataEvents } = useGetEvents({
+    recent: true,
+    all: true,
+    countdown: true,
+    next: true
+  });
+
+  console.log('data ran', dataEvents);
 
   return (
     <div className="w-full bg-white overflow-hidden">
@@ -36,41 +42,43 @@ const EventPage = () => {
         <section>
           <HeadingText>Recent Event</HeadingText>
           <div className="max-md:mx-auto max-md:w-fit w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 space-y-[20px]">
-            <RenderIf isTrue={!isLoadingEvents}>
-              {dataEvents?.recent.map((data: any) => {
+            {!isLoadingDataEvents &&
+              dataEvents?.paralympic_recent_event &&
+              dataEvents?.paralympic_recent_event.length > 0 &&
+              dataEvents?.paralympic_recent_event.map((data: any) => {
                 return (
                   <CardEvent
                     key={data?.id}
                     variant="hijau"
-                    image={data?.image}
-                    title={data?.name}
-                    subtitle={data?.place}
+                    image={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                    title={data?.title}
+                    subtitle={data?.location}
                     closing={data?.closing}
                     opening={data?.opening}
                   />
                 );
               })}
-            </RenderIf>
           </div>
         </section>
         <section className="mt-[30px]">
           <HeadingText>Next Event</HeadingText>
           <div className="max-md:mx-auto max-md:w-fit w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 space-y-[20px]">
-            <RenderIf isTrue={!isLoadingEvents}>
-              {dataEvents?.next.map((data: any) => {
+            {!isLoadingDataEvents &&
+              dataEvents?.paralympic_next_event &&
+              dataEvents?.paralympic_next_event.length > 0 &&
+              dataEvents?.paralympic_next_event.map((data: any) => {
                 return (
                   <CardEvent
                     key={data?.id}
                     variant="biru"
-                    image={data?.image}
-                    title={data?.name}
-                    subtitle={data?.place}
+                    image={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                    title={data?.title}
+                    subtitle={data?.location}
                     closing={data?.closing}
                     opening={data?.opening}
                   />
                 );
               })}
-            </RenderIf>
           </div>
         </section>
         <section className="mt-[30px] w-full">

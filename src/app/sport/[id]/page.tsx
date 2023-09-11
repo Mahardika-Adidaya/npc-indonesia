@@ -111,7 +111,7 @@ const SportCategoryPage = () => {
               fontAhrefs400.className
             )}
           >
-            Para Badminton News
+            {dataGetDetailSport?.name_sport} News
           </h1>
           <div className="w-full overflow-x-scroll scrollbar-hide flex gap-x-[42px]">
             <SportCardTwo link="#" />

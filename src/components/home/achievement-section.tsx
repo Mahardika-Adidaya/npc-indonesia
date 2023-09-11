@@ -29,7 +29,7 @@ const AchievmentSection = () => {
               </h5>
             </span>
           </div>
-          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 bg-red-300">
+          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 ">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">459</h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
@@ -50,8 +50,8 @@ const AchievmentSection = () => {
             </span>
           </div>
         </section>
-        <section className="w-full h-[100px] xl:h-[140px] bg-white px-[10px] xl:px-[92px] flex max-xl:flex-col-reverse xl:flex-row justify-between items-center rounded-[16px] relative">
-          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] bg-red-300 max-md:ml-[40px]">
+        <section className="w-full h-[100px] xl:h-[140px] bg-white px-[10px] xl:px-[92px] flex max-md:flex-col-reverse md:flex-row justify-between items-center rounded-[16px] relative">
+          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] max-md:ml-[40px]">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">459</h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
@@ -109,7 +109,7 @@ const AchievmentSection = () => {
               </h5>
             </span>
           </div>
-          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 bg-red-300">
+          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 ">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">2</h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">

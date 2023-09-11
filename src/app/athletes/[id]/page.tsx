@@ -1,15 +1,29 @@
+'use client';
+
+import moment from 'moment';
+import { useParams } from 'next/navigation';
 import { FaLocationDot } from 'react-icons/fa6';
 
+import { useGetAthleteById } from '@/hooks/fetch/useGetAthleteById';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const DetailAthletePage = () => {
+  const { id } = useParams();
+
+  const { data: dataGetAthleteById, isLoading: isLoadingGetAthleteById } =
+    useGetAthleteById(id);
+
+  console.log('data', dataGetAthleteById);
+
   return (
     <div className="w-full bg-white overflow-hidden">
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <div className="flex w-full flex-col xl:flex-row max-lg:gap-y-[18px] xl:justify-between">
           <div className="flex gap-x-[24px]">
             <img
-              src="/athletes/para-badminton/qonitah-ikhtiar-syakuroh.jpg"
+              src={
+                process.env.NEXT_PUBLIC_API_IMAGE + dataGetAthleteById?.image
+              }
               alt="Athlete"
               className="rounded-full h-[128px] w-[128px] md:h-[168px] md:w-[168px] xl:h-[294px] xl:w-[294px] bg-cover outline outline-hitam-50"
             />
@@ -20,14 +34,14 @@ const DetailAthletePage = () => {
                   fontAhrefs400.className
                 )}
               >
-                Leani Ratri Oktila
+                {dataGetAthleteById?.atheletes_name}
               </h1>
               <span className="text-[10px] md:text-[16px] xl:text-[24px] font-[500] text-hitam-400 flex gap-x-[16px] items-center xl:mt-[14px]">
                 <FaLocationDot />
-                Bangkinang, Riau, Indonesia
+                {dataGetAthleteById?.atheletes_regional}
               </span>
               <span className="bg-biru-900 w-fit flex px-[12px] xl:px-[20px] text-[10px] md:text-[12px] xl:text-[20px] py-1 xl:py-[12px] rounded-[12px] text-white mt-[12px] xl:mt-[32px]">
-                Para Badminton
+                {dataGetAthleteById?.paralympic_sport?.name_sport}
               </span>
             </div>
           </div>
@@ -36,13 +50,13 @@ const DetailAthletePage = () => {
               Medals
               <div className="flex items-center gap-x-[36px] w-2/3">
                 <div className="w-[40px] text-[12px] h-[40px] rounded-full bg-[#FFD700] flex items-center justify-center pt-[2px]">
-                  100
+                  {dataGetAthleteById?.gold_medal ?? '0'}
                 </div>
                 <div className="w-[40px] h-[40px] text-[12px] rounded-full bg-[#C0C0C0] flex items-center justify-center pt-[2px]">
-                  100
+                  {dataGetAthleteById?.silver_medal ?? '0'}
                 </div>
                 <div className="w-[40px] h-[40px] text-[12px] rounded-full bg-[#CD7F32] flex items-center justify-center pt-[2px]">
-                  100
+                  {dataGetAthleteById?.bronze_medal ?? '0'}
                 </div>
               </div>
             </div>
@@ -54,7 +68,9 @@ const DetailAthletePage = () => {
                   fontAhrefs400.className
                 )}
               >
-                1991
+                {moment(dataGetAthleteById?.atheletes_birthdate).format(
+                  'DD MMM YYYY'
+                )}
               </div>
             </div>
             <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
@@ -65,7 +81,7 @@ const DetailAthletePage = () => {
                   fontAhrefs400.className
                 )}
               >
-                2014 : Asian Para Games Incheon Korea
+                {dataGetAthleteById?.atheletes_debute}
               </div>
             </div>
             <div className="px-[20px] font-[400] text-[16px] py-[10px] items-center border-2 border-hitam-100 flex justify-between w-full xl:w-[502px]">
@@ -76,7 +92,7 @@ const DetailAthletePage = () => {
                   fontAhrefs400.className
                 )}
               >
-                WS SL4, XD SL3-SU5
+                {dataGetAthleteById?.atheletes_class}
               </div>
             </div>
           </div>
@@ -90,50 +106,12 @@ const DetailAthletePage = () => {
           >
             Biography
           </h2>
-          <p className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]">
-            Initially, Leani played badminton as a regular athlete from the age
-            of 8, competing in national-level tournaments since 1999. However,
-            in 2011, Leani had a motorcycle accident which resulted in a broken
-            leg and left hand. Her left leg became seven centimeters shorter
-            than her right leg. Consequently, Leani transitioned to the
-            disability category. Just within two years after the accident, she
-            joined the national para-badminton team. Leani earned her
-            bachelor&apos;s degree in Sports Science from the University of
-            Riau, Pekanbaru. Subsequently, she pursued her Master&apos;s in
-            Indonesian Language Education at the Veteran Bangun Nusantara
-            University, Sukoharjo. Since joining the national team in 2013,
-            Leani has clinched victories in various international competitions.
-            Within a year of joining the team, she secured three medals in the
-            2014 Asian Para Games. She won a bronze in the women&apos;s singles,
-            a silver partnering with Khalimatus Sadiyah in women&apos;s doubles,
-            and a gold with Fredy Setiawan in mixed doubles. A year later, she
-            swept the gold medals in all three events she participated in at the
-            2015 ASEAN Para Games. In the 2017 ASEAN Para Games, she repeated
-            this feat, this time with a different partner in the mixed doubles,
-            Hary Susanto. In the same year, Leani participated in her first
-            World Championships. In that championship, she achieved the title of
-            World Champion in mixed doubles alongside Hary Susanto. Not only
-            that, she also secured a silver in women&apos;s singles and a bronze
-            in women&apos;s doubles. In 2018, Leani seized two gold medals in
-            mixed doubles and women&apos;s doubles at the 2018 Asian Para Games
-            held in Jakarta. However, in the women&apos;s singles category, she
-            secured a silver after losing to Cheng Hefang in a three-set final.
-            In the 2019 World Championships in Basel, she successfully defended
-            her world champion title in mixed doubles. She also claimed the
-            world champion title in women&apos;s singles. Additionally,
-            alongside Sadiyah, she earned a silver medal after previously
-            winning a bronze in the World Championships. For her achievements
-            from 2018 to 2019, she was crowned the Best Female Para-Badminton
-            Player by BWF in consecutive years. She also won the Indonesian
-            Sport Awards 2018 in the Favorite Disabled Female Pair Athlete
-            category alongside Khalimatus Sadiyah. In 2021, she secured
-            Indonesia&apos;s first gold medals in para-badminton at the 2020
-            Summer Paralympics in the women&apos;s doubles SL3-SU5 category with
-            Khalimatus Sadiyah, as well as in the mixed doubles SL3-SU5 category
-            with Hary Susanto. Leani also clinched a silver medal in the
-            women&apos;s singles after a three-set loss to Cheng Hefang in the
-            final match.
-          </p>
+          <p
+            className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]"
+            dangerouslySetInnerHTML={{
+              __html: dataGetAthleteById?.atheletes_biography
+            }}
+          ></p>
         </div>
         <div className="flex flex-col gap-y-5 xl:flex-row gap-x-[64px] mt-[32px] xl:mt-[91px]">
           <h2
