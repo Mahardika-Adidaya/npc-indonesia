@@ -8,6 +8,8 @@ const SportPage = () => {
   const { data: dataSportsCategory, isLoading: isLoadingSportsCategory } =
     useGetSportsCategory();
 
+  console.log('data', dataSportsCategory);
+
   return (
     <div className="w-full bg-white overflow-hidden min-h-screen">
       <div className="max-w-[1440px] mx-auto">
@@ -17,6 +19,10 @@ const SportPage = () => {
             {!isLoadingSportsCategory &&
               dataSportsCategory.length > 0 &&
               dataSportsCategory.map((data: any) => {
+                if (data?.name_sport === 'General News') {
+                  return null;
+                }
+
                 return (
                   <SportCardOne
                     key={data?.id}
