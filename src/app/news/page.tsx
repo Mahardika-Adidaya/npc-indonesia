@@ -1,7 +1,12 @@
+'use client';
+
 import ImageSlider from '@/components/news/image-slider';
 import SportCardTwo from '@/components/sport/card-two';
+import { useGetNews } from '@/hooks/fetch/news/useGetNews';
 
 const NewsPage = () => {
+  const { data: dataGetNews, isLoading: isLoadingDataGetNews } = useGetNews();
+
   return (
     <div className="w-full bg-white overflow-hidden">
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] gap-y-[40px] w-full max-w-[1440px] mx-auto flex flex-col">
@@ -15,9 +20,20 @@ const NewsPage = () => {
             news
           </h3>
           <div className="flex overflow-scroll gap-x-[30px] scrollbar-hide">
-            <SportCardTwo link="news/jokowi" />
-            <SportCardTwo link="news/jokowi" />
-            <SportCardTwo link="news/jokowi" />
+            {dataGetNews &&
+              dataGetNews.length > 0 &&
+              dataGetNews.map((data: any) => {
+                return (
+                  <SportCardTwo
+                    link={`news/${data?.id}`}
+                    key={data.id}
+                    title={data?.title}
+                    date={data?.createdAt}
+                    image={data?.image}
+                    newsType={data?.news_type?.name_sport}
+                  />
+                );
+              })}
           </div>
         </section>
         <section>
@@ -29,9 +45,20 @@ const NewsPage = () => {
             news
           </h3>
           <div className="flex overflow-scroll gap-x-[30px] scrollbar-hide">
-            <SportCardTwo link="#" />
-            <SportCardTwo link="#" />
-            <SportCardTwo link="#" />
+            {dataGetNews &&
+              dataGetNews.length > 0 &&
+              dataGetNews.map((data: any) => {
+                return (
+                  <SportCardTwo
+                    link={`news/${data?.id}`}
+                    key={data.id}
+                    title={data?.title}
+                    date={data?.createdAt}
+                    image={data?.image}
+                    newsType={data?.news_type?.name_sport}
+                  />
+                );
+              })}
           </div>
         </section>
       </div>

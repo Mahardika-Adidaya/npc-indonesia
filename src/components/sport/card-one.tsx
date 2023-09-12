@@ -10,7 +10,6 @@ interface SportCardProps {
 }
 
 const SportCardOne: FC<SportCardProps> = ({ name, image, className, id }) => {
-  console.log('link', image);
   return (
     <Link
       href={`/sport/${id}`}

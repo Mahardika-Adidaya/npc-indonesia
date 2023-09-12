@@ -116,7 +116,7 @@ const Navbar = () => {
                     />
                   </Link>
                 </div>
-                <div className="w-[1px] bg-hitam-400" />
+                {/* <div className="w-[1px] bg-hitam-400" />
                 <Select>
                   <SelectTrigger className="w-[116px] h-[32px] rounded-[16px]">
                     <SelectValue placeholder="Language" />
@@ -125,7 +125,7 @@ const Navbar = () => {
                     <SelectItem value="en">English</SelectItem>
                     <SelectItem value="id">Indonesian</SelectItem>
                   </SelectContent>
-                </Select>
+                </Select> */}
               </div>
             </section>
           </RenderIf>
@@ -192,7 +192,7 @@ const Navbar = () => {
                     />
                   </Link>
                 </div>
-                <div className="w-[1px] bg-hitam-400" />
+                {/* <div className="w-[1px] bg-hitam-400" />
                 <Select>
                   <SelectTrigger className="w-[116px] h-[32px] rounded-[16px]">
                     <SelectValue placeholder="Language" />
@@ -201,7 +201,7 @@ const Navbar = () => {
                     <SelectItem value="en">English</SelectItem>
                     <SelectItem value="id">Indonesian</SelectItem>
                   </SelectContent>
-                </Select>
+                </Select> */}
               </div>
             </div>
           </section>

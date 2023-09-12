@@ -4,7 +4,7 @@ import moment from 'moment';
 import { useParams } from 'next/navigation';
 import { FaLocationDot } from 'react-icons/fa6';
 
-import { useGetAthleteById } from '@/hooks/fetch/useGetAthleteById';
+import { useGetAthleteById } from '@/hooks/fetch/athletes/useGetAthleteById';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const DetailAthletePage = () => {
@@ -12,8 +12,6 @@ const DetailAthletePage = () => {
 
   const { data: dataGetAthleteById, isLoading: isLoadingGetAthleteById } =
     useGetAthleteById(id);
-
-  console.log('data', dataGetAthleteById);
 
   return (
     <div className="w-full bg-white overflow-hidden">

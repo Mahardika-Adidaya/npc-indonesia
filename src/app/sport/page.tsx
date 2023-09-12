@@ -8,8 +8,6 @@ const SportPage = () => {
   const { data: dataSportsCategory, isLoading: isLoadingSportsCategory } =
     useGetSportsCategory();
 
-  console.log('data', dataSportsCategory);
-
   return (
     <div className="w-full bg-white overflow-hidden min-h-screen">
       <div className="max-w-[1440px] mx-auto">

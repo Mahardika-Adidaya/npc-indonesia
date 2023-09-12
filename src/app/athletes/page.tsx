@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { useGetAthletes } from '@/hooks/fetch/useGetAthletes';
+import { useGetAthletes } from '@/hooks/fetch/athletes/useGetAthletes';
 
 const AthletesPage = () => {
   const [activeCategory, setActiveCategory] = useState('');

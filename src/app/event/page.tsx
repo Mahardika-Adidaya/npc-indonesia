@@ -22,8 +22,6 @@ const EventPage = () => {
     next: true
   });
 
-  console.log('data ran', dataEvents);
-
   return (
     <div className="w-full bg-white overflow-hidden">
       <div className="py-3 xl:py-[20px] flex-col xl:flex-row items-center flex gap-x-[60px] justify-center border-b border-b-hitam-200">
