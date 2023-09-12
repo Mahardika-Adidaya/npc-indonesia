@@ -27,7 +27,7 @@ const AthletesSection: FC<AthletesSectionProps> = ({ category, datas }) => {
               key={data?.id}
               name={data?.athletes_name}
               src={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
-              url={`athletes/${data.id}}`}
+              url={`athletes/${data.id}`}
             />
           ))}
       </div>
