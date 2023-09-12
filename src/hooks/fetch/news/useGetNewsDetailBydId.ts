@@ -11,7 +11,7 @@ export const useGetNewsDetailById = (id: any) => {
   });
 
   return {
-    data: data?.data[0],
+    data: data?.data,
     isLoading
   };
 };

@@ -2,9 +2,7 @@
 
 import moment from 'moment';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { BsArrowRight } from 'react-icons/bs';
 
 import SportCardTwo from '@/components/sport/card-two';
 import { useGetNewsDetailById } from '@/hooks/fetch/news/useGetNewsDetailBydId';
@@ -14,22 +12,26 @@ const DetailNewsPage = () => {
   const { data: newsData, isLoading: isLoadingNewsData } =
     useGetNewsDetailById(id);
 
+  console.log('data', newsData);
+
   return (
     <div className="w-full bg-white">
       <div className="py-[29px] xl:py-[86px] gap-y-5 xl:gap-y-[60px] px-2 xl:px-[70px] w-full max-w-[1440px] mx-auto flex flex-col">
         <section className="flex flex-col gap-y-[12px] xl:gap-y-[28px]">
           <h1 className="font-poppins font-[700] text-[20px] xl:text-[40px]">
-            {newsData?.title}
+            {newsData?.data?.title}
           </h1>
           <span className="flex gap-5 items-center text-[12px] xl:text-[20px]">
             <h3 className="font-[400]">
-              {moment(newsData?.date).format('DD MMM YYYY')}
+              {moment(newsData?.data?.date).format('DD MMM YYYY')}
             </h3>
             <div className="rounded-full w-[6px] h-[6px] bg-hitam-400 block xl:hidden" />
-            <h3 className="font-[500]">INI DUMMY</h3>
+            <h3 className="font-[500]">
+              {newsData?.data?.news_type?.name_sport}
+            </h3>
           </span>
           <Image
-            src={process.env.NEXT_PUBLIC_API_IMAGE + newsData?.image}
+            src={process.env.NEXT_PUBLIC_API_IMAGE + newsData?.data?.image}
             alt="news"
             width={1300}
             height={624}
@@ -38,7 +40,7 @@ const DetailNewsPage = () => {
           <p
             className="font-poppins text-black font-[400] text-justify text-[12px] xl:text-[24px]"
             dangerouslySetInnerHTML={{
-              __html: newsData?.description
+              __html: newsData?.data?.description
             }}
           ></p>
         </section>
@@ -53,19 +55,28 @@ const DetailNewsPage = () => {
                 news
               </h3>
             </span>
-            <Link
+            {/* <Link
               href="#"
               className="items-center gap-x-3 font-[500] text-[20px] hidden xl:flex"
             >
               Show More
               <BsArrowRight />
-            </Link>
+            </Link> */}
           </div>
           <div className="w-full flex scrollbar-hide overflow-x-scroll gap-x-[21px] mt-5">
-            Ini belum jadi
-            {/* <SportCardTwo link="#" />
-            <SportCardTwo link="#" />
-            <SportCardTwo link="#" /> */}
+            {newsData?.related_news.map((data: any) => {
+              console.log('data ran', data);
+              return (
+                <SportCardTwo
+                  key={data?.id}
+                  link={`news/${data?.id}`}
+                  image={data?.image}
+                  title={data?.title}
+                  date={data?.date}
+                  newsType={newsData?.data?.news_type?.name_sport}
+                />
+              );
+            })}
           </div>
         </section>
       </div>
