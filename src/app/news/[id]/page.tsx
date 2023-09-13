@@ -12,8 +12,6 @@ const DetailNewsPage = () => {
   const { data: newsData, isLoading: isLoadingNewsData } =
     useGetNewsDetailById(id);
 
-  console.log('data', newsData);
-
   return (
     <div className="w-full bg-white">
       <div className="py-[29px] xl:py-[86px] gap-y-5 xl:gap-y-[60px] px-2 xl:px-[70px] w-full max-w-[1440px] mx-auto flex flex-col">
@@ -65,7 +63,6 @@ const DetailNewsPage = () => {
           </div>
           <div className="w-full flex scrollbar-hide overflow-x-scroll gap-x-[21px] mt-5">
             {newsData?.related_news.map((data: any) => {
-              console.log('data ran', data);
               return (
                 <SportCardTwo
                   key={data?.id}

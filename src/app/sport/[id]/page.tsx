@@ -1,10 +1,11 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Player from '@/components/player';
 import SportCardTwo from '@/components/sport/card-two';
+import RenderIf from '@/lib/render-if';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 import { useGetNewsBySportId } from '../../../hooks/fetch/news/useGetNewsBySportId';
@@ -12,10 +13,18 @@ import { useGetDetailSport } from '../../../hooks/fetch/sport/useGetDetailSport'
 
 const SportCategoryPage = () => {
   const { id } = useParams();
-  const [urlVideo, setUrlVideo] = useState([]);
+  const [urlVideo, setUrlVideo] = useState<string[]>([]);
 
   const { data: dataGetDetailSport } = useGetDetailSport(id);
   const { data: dataNewsBySportId } = useGetNewsBySportId(id);
+
+  useEffect(() => {
+    if (dataGetDetailSport) {
+      dataGetDetailSport.video.forEach((video: any) => {
+        urlVideo.push(video.link);
+      });
+    }
+  }, [dataGetDetailSport]);
 
   return (
     <div className="flex flex-col gap-y-[45px] relative">
@@ -85,34 +94,36 @@ const SportCategoryPage = () => {
           ></div>
         </div>
       </section>
-      <section className="px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
-        <div className="flex xl:gap-x-[93px] max-xl:gap-y-4 flex-col xl:flex-row">
-          <h1
-            className={cn(
-              'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',
-              fontAhrefs400.className
-            )}
-          >
-            {dataGetDetailSport?.name_sport} News
-          </h1>
-          <div className="w-full overflow-x-scroll scrollbar-hide flex gap-x-[42px]">
-            {dataNewsBySportId &&
-              dataNewsBySportId?.news.length > 0 &&
-              dataNewsBySportId?.news.map((data: any) => {
-                return (
-                  <SportCardTwo
-                    link="#"
-                    key={data?.id}
-                    title={data?.title}
-                    date={data?.createdAt}
-                    image={data?.image}
-                    newsType={dataGetDetailSport?.name_sport}
-                  />
-                );
-              })}
+      <RenderIf isTrue={dataNewsBySportId?.news.length > 0}>
+        <section className="px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
+          <div className="flex xl:gap-x-[93px] max-xl:gap-y-4 flex-col xl:flex-row">
+            <h1
+              className={cn(
+                'text-[20px] xl:text-[64px] font-[400] max-w-[307px]',
+                fontAhrefs400.className
+              )}
+            >
+              {dataGetDetailSport?.name_sport} News
+            </h1>
+            <div className="w-full overflow-x-scroll scrollbar-hide flex gap-x-[42px]">
+              {dataNewsBySportId &&
+                dataNewsBySportId?.news.length > 0 &&
+                dataNewsBySportId?.news.map((data: any) => {
+                  return (
+                    <SportCardTwo
+                      link="#"
+                      key={data?.id}
+                      title={data?.title}
+                      date={data?.createdAt}
+                      image={data?.image}
+                      newsType={dataGetDetailSport?.name_sport}
+                    />
+                  );
+                })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RenderIf>
       <section className="px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <h1
           className={cn(
@@ -123,12 +134,7 @@ const SportCategoryPage = () => {
           Video You Might Like
         </h1>
         <div className="flex justify-center mb-[46px] mt-[18px]">
-          <Player
-            url={[
-              'https://youtu.be/EuiRfzRu17c',
-              'https://youtu.be/77s99NET9Mw'
-            ]}
-          />
+          <Player url={urlVideo} control={true} />
         </div>
       </section>
     </div>

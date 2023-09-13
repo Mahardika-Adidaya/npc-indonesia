@@ -15,9 +15,9 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { sportCategory } from '@/constants';
+import { useGetSportsCategory } from '@/hooks/fetch/sport/useGetSportsCategory';
 import RenderIf from '@/lib/render-if';
-import { cn, convertToSlug } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -27,10 +27,12 @@ const Navbar = () => {
 
   const [openNavbar, setOpenNavbar] = useState(false);
 
+  const { data: sportCategory } = useGetSportsCategory();
+
   return (
     <>
       <RenderIf isTrue={isMobile}>
-        <nav className="w-full h-fit drop-shadow-md sticky top-0 z-50">
+        <nav className="w-full h-fit drop-shadow-md sticky top-0 z-40">
           <section className="w-full flex justify-between px-2 py-[14px] bg-hitam-50">
             <Link href="/">
               <Image
@@ -132,7 +134,7 @@ const Navbar = () => {
         </nav>
       </RenderIf>
       <RenderIf isTrue={isDekstop}>
-        <nav className="w-full h-fit drop-shadow-md sticky top-0 z-50">
+        <nav className="w-full h-fit drop-shadow-md sticky top-0 z-40">
           <section className="bg-hitam-50">
             <div className="w-full max-w-[1440px] px-[50px] py-[14px] flex items-center justify-between mx-auto">
               <div className="flex gap-x-[38px] text-[14px] font-[400] text-hitam-800">
@@ -233,20 +235,23 @@ const Navbar = () => {
                   <Select
                     onValueChange={value => router.push(`/sport/${value}`)}
                   >
-                    <SelectTrigger className="w-[90px] text-[16px] -mr-[10px] border-none">
-                      <SelectValue placeholder="Sport" />
+                    <SelectTrigger className="w-[90px] text-[16px] -mr-[10px] border-none z-50">
+                      <SelectValue
+                        placeholder="Sport"
+                        className="active:outline-red-500"
+                      />
                     </SelectTrigger>
                     <SelectContent>
-                      {sportCategory.map(category => {
-                        return (
-                          <SelectItem
-                            value={convertToSlug(category)}
-                            key={category}
-                          >
-                            {category}
-                          </SelectItem>
-                        );
-                      })}
+                      {sportCategory &&
+                        sportCategory.map((category: any) => {
+                          if (category.name_sport !== 'General News') {
+                            return (
+                              <SelectItem value={category.id} key={category.id}>
+                                {category.name_sport}
+                              </SelectItem>
+                            );
+                          }
+                        })}
                     </SelectContent>
                   </Select>
                 </li>

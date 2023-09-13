@@ -1,5 +1,6 @@
 'use client';
 
+import moment from 'moment';
 import dynamic from 'next/dynamic';
 
 import CardEvent from '@/components/event/card';
@@ -22,21 +23,25 @@ const EventPage = () => {
     next: true
   });
 
-  console.log('data', dataEvents);
-
   return (
     <div className="w-full bg-white overflow-hidden">
       <div className="py-3 xl:py-[20px] flex-col xl:flex-row items-center flex gap-x-[60px] justify-center border-b border-b-hitam-200">
         <div className="flex gap-x-[8px] items-center">
           <h3 className="font-[500] text-[10px] xl:text-[19px]">
-            Asian Para Games Hangzhou 2023
+            {dataEvents?.paralympic_count_event?.title}
           </h3>
           <h3 className="font-[500] xl:text-[19px] text-[10px]">-</h3>
           <h3 className="text-[10px] xl:text-[14px] font-[400]">
-            22 - 28 October, 2023
+            {moment(dataEvents?.paralympic_count_event?.opening).format(
+              'DD MMM YYYY'
+            )}{' '}
+            -{' '}
+            {moment(dataEvents?.paralympic_count_event?.closing).format(
+              'DD MMM YYYY'
+            )}
           </h3>
         </div>
-        <EventCountdown />
+        <EventCountdown eventCountDown={dataEvents?.paralympic_count_event} />
       </div>
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <section>
@@ -98,82 +103,60 @@ const EventPage = () => {
               className="w-full xl:w-[453px] "
             />
           </div>
-          <div className="max-w-full w-full mx-auto flex xl:mt-[52px] space-x-[30px] md:space-x-[86px] mt-[52px]">
-            <span>
-              <h2
-                className={cn(
-                  'text-[28px] md:text-[64px] font-[400]',
-                  fontAhrefs400.className
-                )}
+          {dataEvents?.paralympic_all_event.map((event: any, index: number) => {
+            return (
+              <div
+                className="max-w-full w-full mx-auto flex xl:mt-[52px] space-x-[30px] md:space-x-[86px] mt-[52px]"
+                key={index}
               >
-                2014
-              </h2>
-              <h2
-                className={cn(
-                  'text-[18px] md:text-[40px] font-[400]',
-                  fontAhrefs400.className
-                )}
-              >
-                Event
-              </h2>
-            </span>
-            <div className="w-full flex flex-col gap-y-[14px]">
-              <Card className="w-full flex items-center px-[10px] md:px-[46px] py-[13px] md:py-[21px] gap-x-[16px] md:gap-x-[36px]">
-                <img
-                  src="/dummy/events/event-logo-one.png"
-                  className="h-[60px] md:h-[111px]"
-                  alt="Logo Event"
-                />
-                <section className="flex h-full flex-col space-y-2 md:space-y-3">
-                  <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
-                    7 October
-                  </span>
-                  <h3 className="text-[10px] md:text-[20px] font-[400]">
-                    Incheon, South Korea
-                  </h3>
-                  <h4 className="font-[500] text-[12px] md:text-[28px]">
-                    Asian Paralympic Games 2014
-                  </h4>
-                </section>
-              </Card>
-              <Card className="w-full flex items-center px-[10px] md:px-[46px] py-[13px] md:py-[21px] gap-x-[16px] md:gap-x-[36px]">
-                <img
-                  src="/dummy/events/event-logo-one.png"
-                  className="h-[60px] md:h-[111px]"
-                  alt="Logo Event"
-                />
-                <section className="flex h-full flex-col space-y-2 md:space-y-3">
-                  <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
-                    7 October
-                  </span>
-                  <h3 className="text-[10px] md:text-[20px] font-[400]">
-                    Incheon, South Korea
-                  </h3>
-                  <h4 className="font-[500] text-[12px] md:text-[28px]">
-                    Asian Paralympic Games 2014
-                  </h4>
-                </section>
-              </Card>
-              <Card className="w-full flex items-center px-[10px] md:px-[46px] py-[13px] md:py-[21px] gap-x-[16px] md:gap-x-[36px]">
-                <img
-                  src="/dummy/events/event-logo-one.png"
-                  className="h-[60px] md:h-[111px]"
-                  alt="Logo Event"
-                />
-                <section className="flex h-full flex-col space-y-2 md:space-y-3">
-                  <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
-                    7 October
-                  </span>
-                  <h3 className="text-[10px] md:text-[20px] font-[400]">
-                    Incheon, South Korea
-                  </h3>
-                  <h4 className="font-[500] text-[12px] md:text-[28px]">
-                    Asian Paralympic Games 2014
-                  </h4>
-                </section>
-              </Card>
-            </div>
-          </div>
+                <span>
+                  <h2
+                    className={cn(
+                      'text-[28px] md:text-[64px] font-[400]',
+                      fontAhrefs400.className
+                    )}
+                  >
+                    {event?.year}
+                  </h2>
+                  <h2
+                    className={cn(
+                      'text-[18px] md:text-[40px] font-[400]',
+                      fontAhrefs400.className
+                    )}
+                  >
+                    Event
+                  </h2>
+                </span>
+                <div className="w-full flex flex-col gap-y-[14px]">
+                  {event?.data.map((data: any, index: number) => {
+                    return (
+                      <Card
+                        className="w-full flex items-center px-[10px] md:px-[46px] py-[13px] md:py-[21px] gap-x-[16px] md:gap-x-[36px]"
+                        key={index}
+                      >
+                        <img
+                          src={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                          className="h-[60px] md:h-[111px]"
+                          alt="Logo Event"
+                        />
+                        <section className="flex h-full flex-col space-y-2 md:space-y-3">
+                          <span className="px-2 md:px-[16px] py-1 md:py-[8px] bg-hijau-400 rounded-full w-fit text-[8px] md:text-[16px] font-[700] text-white">
+                            {moment(data?.opening).format('DD MMM YYYY')}
+                          </span>
+                          <h3 className="text-[10px] md:text-[20px] font-[400]">
+                            {data?.location}
+                          </h3>
+                          <h4 className="font-[500] text-[12px] md:text-[28px]">
+                            {data?.title}
+                          </h4>
+                        </section>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </section>
       </div>
     </div>
