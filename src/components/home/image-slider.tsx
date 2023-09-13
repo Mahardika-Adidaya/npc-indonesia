@@ -1,6 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import CardImageSlider from '@/components/news/card-image-slider';
+
+import React, { useEffect, useState } from 'react';
+
 import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
 
@@ -106,12 +107,6 @@ const ImageSliderHome: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
-      <section className="w-full flex justify-between">
-        <CardImageSlider />
-        <CardImageSlider />
-        <CardImageSlider />
-        <CardImageSlider />
       </section>
     </div>
   );

@@ -1,7 +1,4 @@
-import { title } from 'process';
-
 import moment from 'moment';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -23,7 +20,7 @@ const SportCardTwo: FC<SportCardTwoProps> = ({
   return (
     <Link href={link}>
       <div className="w-[169px] xl:w-[417px] border border-hitam-100 shadow-md overflow-hidden rounded-[9px] font-poppins">
-        <Image
+        <img
           src={process.env.NEXT_PUBLIC_API_IMAGE + image}
           alt="news"
           width={417}
