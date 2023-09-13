@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -14,7 +13,7 @@ const AthleteProfile: FC<AthleteProfileProps> = ({ src, name, url }) => {
       href={url}
       className="flex items-center justify-center flex-col gap-y-[16px]"
     >
-      <Image
+      <img
         src={src}
         alt="Athlete"
         width={188}
