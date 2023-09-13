@@ -120,65 +120,38 @@ const DetailAthletePage = () => {
           >
             Result
           </h2>
-          <p className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]">
-            Initially, Leani played badminton as a regular athlete from the age
-            Silver Medal 4 Nations Para Badminton International 2023 WD - SL 3 -
-            SU 5 Gold Medal 4 Nations Para Badminton International 2023 XD - SL
-            3 - SU 5 Silver Medal Canada Para Badminton International 2023 WD -
-            SL 3 - SU 5 Gold Medal Canada Para Badminton International 2023 XD -
-            SL 3 - SU 5 Gold Medal Bahrain Para Badminton International 2023 WD
-            - SL 3 - SU 5 Gold Medal Bahrain Para Badminton International 2023
-            XD - SL 3 - SU 5 Silver Medal Bahrain Para Badminton International
-            2023 WS - SL 4 Silver Medal Thailand Para Badminton International
-            2023 WD - SL 3 - SU 5 Gold Medal Thailand Para Badminton
-            International 2023 XD - SL 3 - SU 5 Silver Medal Thailand Para
-            Badminton International 2023 WS - SL 4 Gold Medal Brazil Para
-            Badminton International 2023 XD - SL 3 - SU 5 Gold Medal Brazil Para
-            Badminton International 2023 WS - SL 4 Gold Medal Spanish Para
-            Badminton International 2023 WD - SL 3 - SU 5 Gold Medal Spanish
-            Para Badminton International 2023 XD - SL 3 - SU 5 Gold Medal
-            Spanish Para Badminton International 2023 WS - SL 4 Gold Medal HULIC
-            DAIHATSU BWF Para Badminton World Championships 2022 WD - SL 3 - SU
-            5 Gold Medal Sheikh Hamdan bin Rashid Al Maktoum 3rd Dubai Para
-            Badminton International 2021 WS SL4 Gold Medal Sheikh Hamdan bin
-            Rashid Al Maktoum 3rd Dubai Para Badminton International 2021 WD SL3
-            - SU5 Silver Medal Sheikh Hamdan bin Rashid Al Maktoum 3rd Dubai
-            Para Badminton International 2021 XD SL3 - SU5 Silver Medal Brazil
-            Para Badminton International 2020 WS - SL 4 Gold Medal Brazil Para
-            Badminton International 2020 WD - SL 3 - SU 5 Gold Medal Brazil Para
-            Badminton International 2020 XD - SL 3 - SU 5 Silver Medal TOTAL BWF
-            Para-Badminton World Championships 2019 WD SL 3- SU 5 Gold Medal
-            TOTAL BWF Para-Badminton World Championships 2019 WS SL 4 Gold Medal
-            TOTAL BWF Para-Badminton World Championships 2019 XD SL 3- SU 5 Gold
-            Medal FZ Forza Irish Para-Badminton International 2019 WS SL 4 Gold
-            Medal FZ Forza Irish Para-Badminton International 2019 WD SL 3 - SU
-            5 Gold Medal FZ Forza Irish Para-Badminton International 2019 XD SL
-            3 - SU 5 Gold Medal YONEX Canada Para-Badminton International 2019
-            WS SL4 Gold Medal YONEX Canada Para-Badminton International 2019 WD
-            SL3-SU5 Gold Medal YONEX Canada Para-Badminton International 2019 XD
-            SL3-SU5 Gold Medal 2nd Fazza- Dubai Para-Badminton International
-            2019 WD SL 3 - SU 5 Silver Medal 2nd Fazza- Dubai Para-Badminton
-            International 2019 WS SL 4 Gold Medal 2nd Fazza- Dubai
-            Para-Badminton International 2019 XD SL 3 - SU 5 Gold Medal 5th
-            Turkish Para-Badminton International - ENESCUP 2019 WS SL 4 Gold
-            Medal 5th Turkish Para-Badminton International - ENESCUP 2019 XD SL
-            3 - SU 5 Gold Medal Australia Para-Badminton International 2018 WD
-            SL 3 - SU 5 Gold Medal Australia Para-Badminton International 2018
-            XD SL 3 - SU 5 Gold Medal Australia Para-Badminton International
-            2018 WS SL 4 + SU 5 Silver Medal Asian Para Games 2018 WS SL 4 Gold
-            Medal Asian Para Games 2018 WD SL 3 - SU 5 Gold Medal Asian Para
-            Games 2018 XD SL 3 - SU 5 Gold Medal Thailand Para-Badminton
-            International 2018 WS SL 4 Gold Medal Thailand Para-Badminton
-            International 2018 WD SL 3 - SU 5 Gold Medal Thailand Para-Badminton
-            International 2018 XD SL 3 - SU 5 Gold Medal FZ Forza Irish
-            Para-Badminton International 2018 WS SL4 Gold Medal FZ Forza Irish
-            Para-Badminton International 2018 WD SL3 - SU5 Gold Medal FZ Forza
-            Irish Para-Badminton International 2018 XD SL3 - SU5 Gold Medal 1st
-            Fazza - Dubai Para-Badminton International 2018 WS SL4 + SU5 Gold
-            Medal 1st Fazza - Dubai Para-Badminton International 2018 WD SL3 -
-            SU5 Gold Medal 1st Fazza - Dubai Para-Badminton International 2018
-            XD SL3 - SU5
-          </p>
+          <ul className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]">
+            {dataGetAthleteById?.result_gold_medal.map(
+              (data: any, index: number) => {
+                return (
+                  <li key={index}>
+                    <strong>Gold Medal </strong>
+                    {data?.sport_event} - {data?.year} - {data?.class}
+                  </li>
+                );
+              }
+            )}
+            {dataGetAthleteById?.result_silver_medal.map(
+              (data: any, index: number) => {
+                return (
+                  <li key={index}>
+                    <strong>Silver Medal </strong>
+                    {data?.sport_event} - {data?.year} - {data?.class}
+                  </li>
+                );
+              }
+            )}
+            {dataGetAthleteById?.result_bronze_medal.map(
+              (data: any, index: number) => {
+                return (
+                  <li key={index}>
+                    <strong>Bronze Medal </strong>
+                    {data?.sport_event} - {data?.year} - {data?.class}
+                  </li>
+                );
+              }
+            )}
+          </ul>
         </div>
       </div>
     </div>
