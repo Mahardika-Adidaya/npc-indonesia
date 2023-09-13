@@ -24,27 +24,33 @@ const PartnersSection = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="py-[24px] md:py-[70px] py-2 md:px-[84px] w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center">
+      <div className="md:py-[24px] xl:py-[70px] py-2 md:px-[84px] w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center">
         <HeadingText>Our Partners</HeadingText>
         <Slider
-          className="w-full items-center h-fit gap-x-[46px] flex overflow-hidden bg-red-500"
+          className="w-full items-center flex overflow-hidden"
           {...settings}
         >
-          <img
-            src="/companies/logo-konect.png"
-            alt="Konect"
-            className="h-[151px]"
-          />
-          <img
-            src="/companies/logo-bayan-resources.png"
-            alt="Bayan Resources"
-            className="h-[151px]"
-          />
-          <img
-            src="/companies/logo-bayan-peduli.png"
-            alt="Bayan Peduli"
-            className="h-[151px]"
-          />
+          <div>
+            <img
+              src="/companies/logo-konect.png"
+              alt="Konect"
+              className="h-[151px]"
+            />
+          </div>
+          <div>
+            <img
+              src="/companies/logo-bayan-resources.png"
+              alt="Bayan Resources"
+              className="h-[151px]"
+            />
+          </div>
+          <div>
+            <img
+              src="/companies/logo-bayan-peduli.png"
+              alt="Bayan Peduli"
+              className="h-[151px]"
+            />
+          </div>
         </Slider>
       </div>
     </div>
