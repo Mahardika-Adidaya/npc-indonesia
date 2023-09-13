@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const EventCountdown = ({ eventCountDown }: { eventCountDown: any }) => {
-  const targetTime = moment(eventCountDown.count_down_time);
+  const targetTime = moment(eventCountDown?.count_down_time);
   const [currentTime, setCurrentTime] = useState(moment());
   const timeBetween = moment.duration(targetTime.diff(currentTime));
 

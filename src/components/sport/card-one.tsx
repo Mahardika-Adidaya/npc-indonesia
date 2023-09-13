@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -15,7 +14,7 @@ const SportCardOne: FC<SportCardProps> = ({ name, image, className, id }) => {
       href={`/sport/${id}`}
       className="flex flex-col h-fit w-fit gap-y-[16px] justify-center"
     >
-      <Image
+      <img
         height={270}
         width={270}
         alt={name}
