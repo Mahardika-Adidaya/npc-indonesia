@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { FaLocationDot, FaPhoneVolume } from 'react-icons/fa6';
 import { HiMail } from 'react-icons/hi';
 import { useMediaQuery } from 'react-responsive';
@@ -16,7 +15,7 @@ const Footer = () => {
         <footer>
           <section className="bg-hitam-50 w-full">
             <div className="py-[16px] px-[26px] w-full mx-auto flex flex-col space-y-3">
-              <Image
+              <img
                 src="/logo-npci.png"
                 alt="Logo NPCI"
                 width={147}
@@ -62,7 +61,7 @@ const Footer = () => {
         <footer>
           <section className="bg-hitam-50 w-full">
             <div className="py-[62px] px-[116px] w-full max-w-[1440px] mx-auto flex items-center justify-between">
-              <Image
+              <img
                 src="/logo-npci.png"
                 alt="Logo NPCI"
                 width={276}

@@ -1,7 +1,6 @@
 'use client';
 
 import moment from 'moment';
-import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
 import SportCardTwo from '@/components/sport/card-two';
@@ -28,7 +27,7 @@ const DetailNewsPage = () => {
               {newsData?.data?.news_type?.name_sport}
             </h3>
           </span>
-          <Image
+          <img
             src={process.env.NEXT_PUBLIC_API_IMAGE + newsData?.data?.image}
             alt="news"
             width={1300}

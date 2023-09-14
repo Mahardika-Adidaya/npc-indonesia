@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -35,7 +34,7 @@ const Navbar = () => {
         <nav className="w-full h-fit drop-shadow-md sticky top-0 z-40">
           <section className="w-full flex justify-between px-2 py-[14px] bg-hitam-50">
             <Link href="/">
-              <Image
+              <img
                 src="/logo-npci.png"
                 alt="Logo NPCI"
                 width={79}
@@ -78,7 +77,7 @@ const Navbar = () => {
               <div className="mt-[26px] flex justify-between">
                 <div className="flex gap-x-[14px] items-center">
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-facebook.png"
                       alt="Facebook"
                       height={20}
@@ -86,7 +85,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-instagram.png"
                       alt="Instagram"
                       height={24}
@@ -94,7 +93,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-youtube.png"
                       alt="YouTube"
                       height={24}
@@ -102,7 +101,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-twitter.png"
                       alt="Twitter"
                       height={24}
@@ -110,7 +109,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-tiktok.png"
                       alt="TikTok"
                       height={24}
@@ -154,7 +153,7 @@ const Navbar = () => {
               <div className="flex gap-x-[18px]">
                 <div className="flex gap-x-[14px] items-center">
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-facebook.png"
                       alt="Facebook"
                       height={20}
@@ -162,7 +161,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-instagram.png"
                       alt="Instagram"
                       height={24}
@@ -170,7 +169,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-youtube.png"
                       alt="YouTube"
                       height={24}
@@ -178,7 +177,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-twitter.png"
                       alt="Twitter"
                       height={24}
@@ -186,7 +185,7 @@ const Navbar = () => {
                     />
                   </Link>
                   <Link href="#">
-                    <Image
+                    <img
                       src="/socmeds/logo-tiktok.png"
                       alt="TikTok"
                       height={24}
@@ -210,7 +209,7 @@ const Navbar = () => {
           <section className="bg-white">
             <div className="w-full max-w-[1440px] px-[50px] py-[8px] flex items-center justify-between mx-auto">
               <Link href="/">
-                <Image
+                <img
                   src="/logo-npci.png"
                   alt="Logo NPCI"
                   width={119}
