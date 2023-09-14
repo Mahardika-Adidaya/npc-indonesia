@@ -24,10 +24,10 @@ const AthletesPage = () => {
     <div className="w-full bg-white overflow-hidden">
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col space-y-[38px] xl:space-y-[60px]">
         <div className="w-full justify-between md:items-center flex flex-row max-md:flex-col">
-          <HeadingText>Paralympic Athlets</HeadingText>
+          <HeadingText>Paralympic Athletes</HeadingText>
           <Select onValueChange={e => setActiveCategory(e)}>
             <SelectTrigger className="w-fit md:w-[245px] xl:w-[345px] lg:px-5 lg:py-4 px-3 py-1 rounded-[8px] lg:text-[24px] max-md:text-[10px]">
-              <SelectValue placeholder="Select Athlet Category" />
+              <SelectValue placeholder="Select Athletes Category" />
             </SelectTrigger>
             <SelectContent>
               {!isLoadingDataOption &&
