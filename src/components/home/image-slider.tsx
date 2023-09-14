@@ -64,7 +64,7 @@ const ImageSliderHome: React.FC = () => {
               'linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0.00) 100%)'
           }}
         />
-        <div className="absolute bottom-[24px] z-40 p-[8px] md:p-[28px] xl:p-[52px] lg:py-[30px] text-white">
+        <div className="absolute bottom-[24px] z-30 p-[8px] md:p-[28px] xl:p-[52px] lg:py-[30px] text-white">
           <div className="w-full xl:w-[443px] flex flex-col md:gap-3 xl:gap-y-[20px]">
             <h1 className="text-[14px] md:text-[24px] xl:text-[36px] font-[700]">
               {data[currentSlide].title}
