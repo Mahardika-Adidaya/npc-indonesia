@@ -65,7 +65,7 @@ const DetailNewsPage = () => {
               return (
                 <SportCardTwo
                   key={data?.id}
-                  link={`news/${data?.id}`}
+                  link={`/news/${data?.id}`}
                   image={data?.image}
                   title={data?.title}
                   date={data?.date}
