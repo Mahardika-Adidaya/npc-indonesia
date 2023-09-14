@@ -19,7 +19,7 @@ const SportCategoryPage = () => {
   const { data: dataNewsBySportId } = useGetNewsBySportId(id);
 
   useEffect(() => {
-    if (dataGetDetailSport) {
+    if (dataGetDetailSport !== undefined) {
       dataGetDetailSport.video.forEach((video: any) => {
         urlVideo.push(video.link);
       });
@@ -133,9 +133,11 @@ const SportCategoryPage = () => {
         >
           Video You Might Like
         </h1>
-        <div className="flex justify-center mb-[46px] mt-[18px]">
-          <Player url={urlVideo} control={true} />
-        </div>
+        <RenderIf isTrue={dataGetDetailSport !== undefined}>
+          <div className="flex justify-center mb-[46px] mt-[18px]">
+            <Player url={urlVideo} control={true} />
+          </div>
+        </RenderIf>
       </section>
     </div>
   );
