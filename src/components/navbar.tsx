@@ -233,7 +233,13 @@ const Navbar = () => {
                 </li>
                 <li className="hover:text-hitam-900 transition-all duration-200">
                   <Select
-                    onValueChange={value => router.push(`/sport/${value}`)}
+                    onValueChange={value => {
+                      if (value === 'sport') {
+                        router.push('/sport');
+                      } else {
+                        router.push(`/sport/${value}`);
+                      }
+                    }}
                   >
                     <SelectTrigger className="w-[90px] text-[16px] -mr-[10px] border-none z-50">
                       <SelectValue
@@ -242,6 +248,7 @@ const Navbar = () => {
                       />
                     </SelectTrigger>
                     <SelectContent>
+                      <SelectItem value="sport">Sport</SelectItem>
                       {sportCategory &&
                         sportCategory.map((category: any) => {
                           if (category.name_sport !== 'General News') {
