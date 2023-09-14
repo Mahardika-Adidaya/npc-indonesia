@@ -111,7 +111,7 @@ const SportCategoryPage = () => {
                 dataNewsBySportId?.news.map((data: any) => {
                   return (
                     <SportCardTwo
-                      link="#"
+                      link={`news/${data?.id}`}
                       key={data?.id}
                       title={data?.title}
                       date={data?.createdAt}
