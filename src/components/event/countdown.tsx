@@ -12,11 +12,6 @@ const EventCountdown = ({ eventCountDown }: { eventCountDown: any }) => {
 
   const daysRemaining = Math.ceil(timeBetween.asDays());
 
-  console.log('days', daysRemaining);
-
-  console.log('target time', targetTime);
-  console.log('current time', currentTime);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(moment());
