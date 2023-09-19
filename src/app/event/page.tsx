@@ -46,7 +46,7 @@ const EventPage = () => {
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <section>
           <HeadingText>Recent Event</HeadingText>
-          <div className="max-md:mx-auto max-md:w-fit w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 space-y-[20px]">
+          <div className="max-md:mx-auto max-md:w-fit w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {!isLoadingDataEvents &&
               dataEvents?.paralympic_recent_event &&
               dataEvents?.paralympic_recent_event.length > 0 &&
@@ -67,7 +67,7 @@ const EventPage = () => {
         </section>
         <section className="mt-[30px]">
           <HeadingText>Next Event</HeadingText>
-          <div className="max-md:mx-auto max-md:w-fit w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 space-y-[20px]">
+          <div className="max-md:mx-auto max-md:w-fit w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {!isLoadingDataEvents &&
               dataEvents?.paralympic_next_event &&
               dataEvents?.paralympic_next_event.length > 0 &&
