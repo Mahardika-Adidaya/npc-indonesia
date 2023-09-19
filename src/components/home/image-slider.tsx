@@ -62,7 +62,7 @@ const ImageSliderHome: React.FC = () => {
   return (
     <div className="w-full flex flex-col gap-y-[16px] mx-auto">
       <section
-        className="w-full h-[233px] md:h-[422px] xl:h-[598px] bg-cover rounded-[20px] relative overflow-hidden"
+        className="w-full h-[233px] md:h-[422px] xl:h-[598px] bg-cover rounded-[4px] md:rounded-[20px] relative overflow-hidden"
         style={{
           backgroundImage: `url('${
             process.env.NEXT_PUBLIC_API_IMAGE +
@@ -86,7 +86,7 @@ const ImageSliderHome: React.FC = () => {
         />
         <div className="absolute bottom-[24px] z-30 p-[8px] md:p-[28px] xl:p-[52px] lg:py-[30px] text-white">
           <div className="w-full xl:w-[443px] flex flex-col md:gap-3 xl:gap-y-[20px]">
-            <h1 className="text-[14px] md:text-[24px] xl:text-[36px] font-[700]">
+            <h1 className="text-[14px] md:text-[24px] xl:text-[36px] font-[700] line-clamp-4">
               {dataGetTopNews[currentSlide].title}
             </h1>
             <div className="text-[8px] xl:text-[16px] flex gap-x-[8px] items-center">
@@ -101,7 +101,11 @@ const ImageSliderHome: React.FC = () => {
               {dataGetTopNews[currentSlide].related_news.length > 0 &&
                 dataGetTopNews[currentSlide].related_news.map(
                   (data: any, index: number) => {
-                    return <h4 key={index}>{data.title}</h4>;
+                    return (
+                      <h4 key={index} className="line-clamp-1">
+                        {data.title}
+                      </h4>
+                    );
                   }
                 )}
               {dataGetTopNews[currentSlide].related_news.length === 0 && (
