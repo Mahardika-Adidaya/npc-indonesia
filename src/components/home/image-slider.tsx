@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { Progress } from '@/components/ui/progress';
+import { useGetTopNews } from '@/hooks/fetch/news/useGetTopNews';
 import { cn } from '@/lib/utils';
 
 const ImageSliderHome: React.FC = () => {
+  const { data: dataGetTopNews } = useGetTopNews();
   const data = [
     {
       title: 'Slide title for 1',
@@ -44,11 +46,20 @@ const ImageSliderHome: React.FC = () => {
     return () => clearInterval(progressInterval);
   }, [currentSlide]);
 
+  if (!dataGetTopNews) {
+    return null;
+  }
+
   return (
     <div className="w-full flex flex-col gap-y-[16px] mx-auto">
       <section
         className="w-full h-[233px] md:h-[422px] xl:h-[598px] bg-cover rounded-[20px] relative overflow-hidden"
-        style={{ backgroundImage: `url('${data[currentSlide].imageUrl}')` }}
+        style={{
+          backgroundImage: `url('${
+            process.env.NEXT_PUBLIC_API_IMAGE +
+            dataGetTopNews[currentSlide].image
+          }')`
+        }}
       >
         <div
           className="w-1/3 absolute left-0 h-full rounded-[20px]"
@@ -67,22 +78,30 @@ const ImageSliderHome: React.FC = () => {
         <div className="absolute bottom-[24px] z-30 p-[8px] md:p-[28px] xl:p-[52px] lg:py-[30px] text-white">
           <div className="w-full xl:w-[443px] flex flex-col md:gap-3 xl:gap-y-[20px]">
             <h1 className="text-[14px] md:text-[24px] xl:text-[36px] font-[700]">
-              {data[currentSlide].title}
+              {dataGetTopNews[currentSlide].title}
             </h1>
             <div className="text-[8px] xl:text-[16px] flex gap-x-[8px] items-center">
               <h4 className="font-[400] text-white">9 August 2023</h4>
               <span className="w-[6px] h-[6px] rounded-full bg-white" />
-              <h4 className="font-[500] text-white">General News</h4>
+              <h4 className="font-[500] text-white">
+                {dataGetTopNews[currentSlide].news_type.name_sport}
+              </h4>
             </div>
             <div className="hidden xl:block">
               <h3>Related Content</h3>
-              <h4>Para Championships open with spectacular celebration</h4>
-              <h4>Para Championships open with spectacular celebration</h4>
-              <h4>Para Championships open with spectacular celebration</h4>
+              {dataGetTopNews[currentSlide].related_news.length > 0 &&
+                dataGetTopNews[currentSlide].related_news.map(
+                  (data: any, index: number) => {
+                    return <h4 key={index}>{data.title}</h4>;
+                  }
+                )}
+              {dataGetTopNews[currentSlide].related_news.length === 0 && (
+                <h4>-</h4>
+              )}
             </div>
           </div>
           <div className="w-full flex mt-[20px] md:mt-[35px] xl:mt-[80px] space-x-3 xl:space-x-[45px]">
-            {data.map((slide, index) => (
+            {dataGetTopNews.map((slide: any, index: number) => (
               <div
                 key={index}
                 className="w-fit flex flex-col gap-y-[8px]"
