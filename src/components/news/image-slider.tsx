@@ -1,19 +1,27 @@
 'use client';
 
+import moment from 'moment';
 import { useState } from 'react';
 
 import { CardImageSlider } from '@/components/news/card-image-slider';
+import { useGetTopNews } from '@/hooks/fetch/news/useGetTopNews';
 
 interface ImageSliderProps {}
 
 const ImageSlider: React.FC<ImageSliderProps> = () => {
+  const { data: dataGetTopNews } = useGetTopNews();
+
   const [selectedImage, setSelectedImage] = useState<string>(
-    '/dummy/banner-one.png'
-  ); // Initial background image
+    process.env.NEXT_PUBLIC_API_IMAGE + dataGetTopNews[0].image
+  );
 
   const handleCardClick = (image: string) => {
-    setSelectedImage(image);
+    setSelectedImage(process.env.NEXT_PUBLIC_API_IMAGE + image);
   };
+
+  if (!dataGetTopNews) {
+    return null;
+  }
 
   return (
     <div className="max-w-[1440px] space-y-2 w-full flex-col xl:flex-row flex mx-auto bg-hitam-100 rounded-[8px]">
@@ -23,21 +31,29 @@ const ImageSlider: React.FC<ImageSliderProps> = () => {
       >
         <div className="rounded-[8px] px-[10px] xl:px-[42px] py-2 xl:py-[28px] backdrop-blur-2xl bg-hitam-300/20 text-white">
           <h1 className="text-[14px] xl:text-[28px] font-[700]">
-            President Jokowi Honors Paralympic Athletes at State Palace for
-            Remarkable Achievements
+            {dataGetTopNews[0].title}
           </h1>
           <div className="text-[8px] xl:text-[16px] flex gap-x-[8px] items-center">
-            <h4 className="font-[400]">9 August 2023</h4>
+            <h4 className="font-[400]">
+              {moment(dataGetTopNews[0].date).format('DD MMM YYYY')}
+            </h4>
             <span className="w-1 h-1 xl:w-[6px] xl:h-[6px] rounded-full bg-white self-center" />
-            <h4 className="font-[500]">General News</h4>
+            <h4 className="font-[500]">
+              {dataGetTopNews[0].news_type.name_sport}
+            </h4>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-1 pb-2">
-        <CardImageSlider onClick={handleCardClick} />
-        <CardImageSlider onClick={handleCardClick} />
-        <CardImageSlider onClick={handleCardClick} />
-        <CardImageSlider onClick={handleCardClick} />
+        {dataGetTopNews.map((data: any, index: number) => {
+          return (
+            <CardImageSlider
+              onClick={handleCardClick}
+              data={data}
+              key={index}
+            />
+          );
+        })}
       </div>
     </div>
   );
