@@ -10,6 +10,13 @@ const EventCountdown = ({ eventCountDown }: { eventCountDown: any }) => {
   const [currentTime, setCurrentTime] = useState(moment());
   const timeBetween = moment.duration(targetTime.diff(currentTime));
 
+  const daysRemaining = Math.ceil(timeBetween.asDays());
+
+  console.log('days', daysRemaining);
+
+  console.log('target time', targetTime);
+  console.log('current time', currentTime);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(moment());
@@ -25,7 +32,7 @@ const EventCountdown = ({ eventCountDown }: { eventCountDown: any }) => {
           'font-helveticaNeue font-[700] space-x-2 w-full text-[14px] xl:text-[24px] flex justify-between'
         )}
       >
-        <span>{timeBetween.days()}</span>
+        <span>{daysRemaining}</span>
         <span>:</span>
         <span>{timeBetween.hours()}</span>
         <span>:</span>
