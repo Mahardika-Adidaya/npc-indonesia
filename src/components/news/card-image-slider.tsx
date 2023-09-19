@@ -1,8 +1,17 @@
-const CardImageSlider = () => {
+interface CardImageSliderProps {
+  onClick: (image: string) => void;
+}
+
+export const CardImageSlider: React.FC<CardImageSliderProps> = ({
+  onClick
+}) => {
   return (
     <div
-      className="my-1 p-[5px] bg-center xl:p-2 rounded-[8px] bg-cover mx-[18px] relative overflow-hidden w-[167px] xl:w-[228px] h-[83px] xl:h-[113px]"
-      style={{ backgroundImage: "url('/dummy/banner-one.png')" }}
+      className="my-1 p-[5px] bg-center xl:p-2 rounded-[8px] bg-cover mx-[18px] relative overflow-hidden w-[167px] xl:w-[228px] h-[83px] xl:h-[113px] cursor-pointer"
+      style={{
+        backgroundImage: `url('/dummy/banner-one.png')` // Use a relative path
+      }}
+      onClick={() => onClick('/dummy/news.png')} // Use an absolute path within the `public` directory
     >
       <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-r from-black/70 to-transparent z-0" />
       <div className="relative z-10 flex flex-col w-full h-full justify-end">
@@ -21,5 +30,3 @@ const CardImageSlider = () => {
     </div>
   );
 };
-
-export default CardImageSlider;

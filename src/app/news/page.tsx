@@ -7,6 +7,10 @@ import { useGetNews } from '@/hooks/fetch/news/useGetNews';
 const NewsPage = () => {
   const { data: dataGetNews, isLoading: isLoadingDataGetNews } = useGetNews();
 
+  if (!dataGetNews) {
+    return null;
+  }
+
   return (
     <div className="w-full bg-white overflow-hidden">
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] gap-y-[40px] w-full max-w-[1440px] mx-auto flex flex-col">
