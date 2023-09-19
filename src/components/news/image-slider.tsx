@@ -9,6 +9,7 @@ import { useGetTopNews } from '@/hooks/fetch/news/useGetTopNews';
 interface ImageSliderProps {}
 
 const ImageSlider: React.FC<ImageSliderProps> = () => {
+  const [mounted, setMounted] = useState(false);
   const { data: dataGetTopNews } = useGetTopNews();
 
   const [selectedImage, setSelectedImage] = useState<string>('');
@@ -24,6 +25,14 @@ const ImageSlider: React.FC<ImageSliderProps> = () => {
       );
     }
   }, [dataGetTopNews]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   if (!dataGetTopNews) {
     return null;

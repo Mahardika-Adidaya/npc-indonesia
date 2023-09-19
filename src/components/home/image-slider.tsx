@@ -7,6 +7,7 @@ import { useGetTopNews } from '@/hooks/fetch/news/useGetTopNews';
 import { cn } from '@/lib/utils';
 
 const ImageSliderHome: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
   const { data: dataGetTopNews } = useGetTopNews();
   const data = [
     {
@@ -45,6 +46,14 @@ const ImageSliderHome: React.FC = () => {
 
     return () => clearInterval(progressInterval);
   }, [currentSlide]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   if (!dataGetTopNews) {
     return null;
