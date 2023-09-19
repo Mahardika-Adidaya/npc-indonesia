@@ -16,7 +16,7 @@ const AchievmentSection = () => {
             src="/trophies/trophy-left-one.png"
             className="h-[77px] xl:h-[182px] absolute left-0 bottom-4 md:bottom-3 xl:bottom-0"
           />
-          <div className="font-[400] ml-[200px] relative w-full h-full">
+          <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
               ASEAN
             </h3>
@@ -71,7 +71,7 @@ const AchievmentSection = () => {
               </h4>
             </span>
           </div>
-          <div className="font-[400] ml-[200px] relative w-full h-full">
+          <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
               ASIAN
             </h3>
@@ -96,7 +96,7 @@ const AchievmentSection = () => {
             src="/trophies/trophy-left-two.png"
             className="h-[77px] xl:h-[182px] absolute left-0 bottom-4 md:bottom-3 xl:bottom-0"
           />
-          <div className="font-[400] ml-[200px] relative w-full h-full">
+          <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
               WORLD
             </h3>
@@ -109,7 +109,7 @@ const AchievmentSection = () => {
               </h5>
             </span>
           </div>
-          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 ">
+          <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">2</h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
