@@ -246,7 +246,7 @@ const Navbar = () => {
                         className="active:outline-red-500"
                       />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="h-96">
                       <SelectItem value="sport">Sport</SelectItem>
                       {sportCategory &&
                         sportCategory.map((category: any) => {
