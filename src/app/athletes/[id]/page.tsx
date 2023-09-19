@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { FaLocationDot } from 'react-icons/fa6';
 
 import { useGetAthleteById } from '@/hooks/fetch/athletes/useGetAthleteById';
+import RenderIf from '@/lib/render-if';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const DetailAthletePage = () => {
@@ -12,6 +13,10 @@ const DetailAthletePage = () => {
 
   const { data: dataGetAthleteById, isLoading: isLoadingGetAthleteById } =
     useGetAthleteById(id);
+
+  if (!dataGetAthleteById) {
+    return null;
+  }
 
   return (
     <div className="w-full bg-white overflow-hidden">
@@ -112,45 +117,56 @@ const DetailAthletePage = () => {
           ></p>
         </div>
         <div className="flex flex-col gap-y-5 xl:flex-row gap-x-[64px] mt-[32px] xl:mt-[91px]">
-          <h2
-            className={cn(
-              fontAhrefs400.className,
-              'text-[20px] md:text-[28px] xl:text-[36px]'
-            )}
+          <RenderIf
+            isTrue={
+              dataGetAthleteById?.gold_medal !== '0' ||
+              dataGetAthleteById?.silver_medal !== '0' ||
+              dataGetAthleteById?.bronze_medal !== '0'
+            }
           >
-            Result
-          </h2>
+            <h2
+              className={cn(
+                fontAhrefs400.className,
+                'text-[20px] md:text-[28px] xl:text-[36px]'
+              )}
+            >
+              Result
+            </h2>
+          </RenderIf>
           <ul className="xl:pr-[120px] text-justify text-[12px] md:text-[18px] xl:text-[24px]">
-            {dataGetAthleteById?.result_gold_medal.map(
-              (data: any, index: number) => {
-                return (
-                  <li key={index}>
-                    <strong>Gold Medal </strong>
-                    {data?.sport_event} - {data?.year} - {data?.class}
-                  </li>
-                );
-              }
-            )}
-            {dataGetAthleteById?.result_silver_medal.map(
-              (data: any, index: number) => {
-                return (
-                  <li key={index}>
-                    <strong>Silver Medal </strong>
-                    {data?.sport_event} - {data?.year} - {data?.class}
-                  </li>
-                );
-              }
-            )}
-            {dataGetAthleteById?.result_bronze_medal.map(
-              (data: any, index: number) => {
-                return (
-                  <li key={index}>
-                    <strong>Bronze Medal </strong>
-                    {data?.sport_event} - {data?.year} - {data?.class}
-                  </li>
-                );
-              }
-            )}
+            {dataGetAthleteById?.result_gold_medal !== null &&
+              dataGetAthleteById?.result_gold_medal.map(
+                (data: any, index: number) => {
+                  return (
+                    <li key={index}>
+                      <strong>Gold Medal </strong>
+                      {data?.sport_event} - {data?.year} - {data?.class}
+                    </li>
+                  );
+                }
+              )}
+            {dataGetAthleteById?.result_silver_medal !== null &&
+              dataGetAthleteById?.result_silver_medal.map(
+                (data: any, index: number) => {
+                  return (
+                    <li key={index}>
+                      <strong>Silver Medal </strong>
+                      {data?.sport_event} - {data?.year} - {data?.class}
+                    </li>
+                  );
+                }
+              )}
+            {dataGetAthleteById?.result_bronze_medal !== null &&
+              dataGetAthleteById?.result_bronze_medal.map(
+                (data: any, index: number) => {
+                  return (
+                    <li key={index}>
+                      <strong>Bronze Medal </strong>
+                      {data?.sport_event} - {data?.year} - {data?.class}
+                    </li>
+                  );
+                }
+              )}
           </ul>
         </div>
       </div>
