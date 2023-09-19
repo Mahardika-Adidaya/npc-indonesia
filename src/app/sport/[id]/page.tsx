@@ -19,12 +19,16 @@ const SportCategoryPage = () => {
   const { data: dataNewsBySportId } = useGetNewsBySportId(id);
 
   useEffect(() => {
-    if (dataGetDetailSport !== undefined) {
+    if (dataGetDetailSport !== undefined && dataGetDetailSport.video) {
       dataGetDetailSport.video.forEach((video: any) => {
         urlVideo.push(video.link);
       });
     }
   }, [dataGetDetailSport]);
+
+  if (!dataGetDetailSport && !dataNewsBySportId) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col gap-y-[45px] relative">

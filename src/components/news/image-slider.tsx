@@ -1,7 +1,7 @@
 'use client';
 
 import moment from 'moment';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { CardImageSlider } from '@/components/news/card-image-slider';
 import { useGetTopNews } from '@/hooks/fetch/news/useGetTopNews';
@@ -11,13 +11,19 @@ interface ImageSliderProps {}
 const ImageSlider: React.FC<ImageSliderProps> = () => {
   const { data: dataGetTopNews } = useGetTopNews();
 
-  const [selectedImage, setSelectedImage] = useState<string>(
-    process.env.NEXT_PUBLIC_API_IMAGE + dataGetTopNews[0].image
-  );
+  const [selectedImage, setSelectedImage] = useState<string>('');
 
   const handleCardClick = (image: string) => {
     setSelectedImage(process.env.NEXT_PUBLIC_API_IMAGE + image);
   };
+
+  useEffect(() => {
+    if (dataGetTopNews !== undefined) {
+      setSelectedImage(
+        process.env.NEXT_PUBLIC_API_IMAGE + dataGetTopNews[0].image
+      );
+    }
+  }, [dataGetTopNews]);
 
   if (!dataGetTopNews) {
     return null;
