@@ -17,7 +17,8 @@ const Player: FC<PlayerProps> = ({ url, control = false }) => {
         playing={true}
         width="100%"
         height="100%"
-        muted={true}
+        controls={true}
+        autoplay={true}
       />
     </div>
   );
