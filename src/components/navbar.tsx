@@ -27,6 +27,11 @@ const Navbar = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
 
   const { data: sportCategory } = useGetSportsCategory();
+  const [showSubMenu, setShowSubMenu] = useState(false);
+
+  const toggleSubMenu = () => {
+    setShowSubMenu(!showSubMenu);
+  };
 
   return (
     <>
@@ -49,7 +54,7 @@ const Navbar = () => {
             </button>
           </section>
           <RenderIf isTrue={openNavbar}>
-            <section className="px-[15px] py-[22px] bg-hitam-100">
+            <section className="px-[15px] py-[22px] bg-hitam-100 z-50">
               <div className="w-full flex rounded-[8px] bg-white overflow-hidden">
                 <input
                   type="text"
@@ -60,9 +65,29 @@ const Navbar = () => {
                   <FiSearch className="text-white" size={24} />
                 </button>
               </div>
-              <div className="flex flex-col mt-5 font-[600] text-[16px] gap-y-4">
+              <div className="flex flex-col mt-5 font-semibold text-16 gap-y-4">
                 <Link href="/">Dashboard</Link>
-                <Link href="/">Sport</Link>
+                <div onClick={toggleSubMenu} className="cursor-pointer">
+                  Sport
+                  {showSubMenu && (
+                    <div className="flex flex-col mt-2 ml-4 gap-y-2 h-48 overflow-y-auto">
+                      {sportCategory &&
+                        sportCategory.map((category: any) => {
+                          if (category.name_sport !== 'General News') {
+                            return (
+                              // eslint-disable-next-line prettier/prettier
+                              <Link
+                                href={`/sport/${category.id}`}
+                                key={category.name_sport}
+                              >
+                                {category.name_sport}
+                              </Link>
+                            );
+                          }
+                        })}
+                    </div>
+                  )}
+                </div>
                 <Link href="/event">Event</Link>
                 <Link href="/news">News</Link>
                 <Link href="/athletes">Athletes</Link>
@@ -230,7 +255,7 @@ const Navbar = () => {
                     Dashboard
                   </Link>
                 </li>
-                <li className="hover:text-hitam-900 transition-all duration-200">
+                <li className="hover:text-hitam-900 line-clamp-1 transition-all duration-200">
                   <Select
                     onValueChange={value => {
                       if (value === 'sport') {
@@ -240,19 +265,24 @@ const Navbar = () => {
                       }
                     }}
                   >
-                    <SelectTrigger className="w-[90px] text-[16px] -mr-[10px] border-none z-50">
+                    <SelectTrigger className="w-[90px] text-[16px] border-none z-50">
                       <SelectValue
                         placeholder="Sport"
                         className="active:outline-red-500"
                       />
                     </SelectTrigger>
-                    <SelectContent className="max-h-96">
+                    <SelectContent className="max-h-96 px-0">
                       <SelectItem value="sport">Sport</SelectItem>
                       {sportCategory &&
                         sportCategory.map((category: any) => {
                           if (category.name_sport !== 'General News') {
                             return (
-                              <SelectItem value={category.id} key={category.id}>
+                              // eslint-disable-next-line prettier/prettier
+                              <SelectItem
+                                className="mr-3"
+                                value={category.id}
+                                key={category.id}
+                              >
                                 {category.name_sport}
                               </SelectItem>
                             );

@@ -42,7 +42,7 @@ const SportCategoryPage = () => {
         }}
       >
         <div className="w-full h-full bg-black/40 z-10" />
-        <div className="w-full max-w-[1440px] absolute z-40 top-0 mx-auto px-2 md:px-[30px] xl:px-[50px] pt-[31px] xl:pt-[116px]">
+        <div className="w-full max-w-[1440px] absolute z-30 top-0 mx-auto px-2 md:px-[30px] xl:px-[50px] pt-[31px] xl:pt-[116px]">
           <h1
             className={cn(
               'text-[20px] xl:text-[64px] font-[400] text-white',
