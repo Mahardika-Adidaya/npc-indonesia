@@ -41,7 +41,9 @@ const EventPage = () => {
             )}
           </h3>
         </div>
-        <EventCountdown eventCountDown={dataEvents?.paralympic_count_event} />
+        <EventCountdown
+          eventCountDown={dataEvents?.paralympic_count_event?.opening}
+        />
       </div>
       <div className="py-[29px] md:py-[56px] md:px-[30px] xl:py-[86px] px-[8px] xl:px-[50px] w-full max-w-[1440px] mx-auto flex flex-col">
         <section>

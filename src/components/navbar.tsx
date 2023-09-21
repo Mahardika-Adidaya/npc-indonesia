@@ -301,7 +301,7 @@ const Navbar = () => {
                   </Link>
                 </li>
               </ul>
-              <div className="w-[calc(361px+72px)] flex rounded-[8px] overflow-hidden">
+              <div className="w-[calc(361px+72px)] flex rounded-[8px] overflow-hidden invisible">
                 <input
                   type="text"
                   className="w-full px-[16px] bg-hitam-50 focus:outline-none"
