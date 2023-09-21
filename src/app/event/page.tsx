@@ -2,6 +2,8 @@
 
 import moment from 'moment';
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
+import { useDebounce } from 'use-debounce';
 
 import CardEvent from '@/components/event/card';
 import { Button } from '@/components/ui/button';
@@ -16,12 +18,27 @@ const EventCountdown = dynamic(() => import('@/components/event/countdown'), {
 });
 
 const EventPage = () => {
+  const [yearOne, setYearOne] = useState('');
+  const [yearTwo, setYearTwo] = useState('');
+  const [totalYear, setTotalYear] = useState('');
+  const [totalYearDebounce] = useDebounce(totalYear, 1000);
+  const [eventName, setEventName] = useState('');
+  const [eventNameDebounce] = useDebounce(eventName, 1000);
+
   const { data: dataEvents, isLoading: isLoadingDataEvents } = useGetEvents({
     recent: true,
     all: true,
     countdown: true,
-    next: true
+    next: true,
+    year: totalYearDebounce,
+    title: eventNameDebounce
   });
+
+  const handleFilterYear = () => {
+    if (yearOne !== '' && yearTwo !== '') {
+      setTotalYear(yearOne + '-' + yearTwo);
+    }
+  };
 
   return (
     <div className="w-full bg-white overflow-hidden">
@@ -93,15 +110,30 @@ const EventPage = () => {
           <div className="w-full h-[52px] flex flex-col xl:flex-row gap-y-3 justify-between">
             <div className="flex items-center max-md:justify-between md:gap-x-2 w-full">
               <h3 className="text-[12px] xl:text-[16px] font-[500]">Filter</h3>
-              <Input placeholder="Year..." className="w-[90px] xl:w-[117px]" />
+              <Input
+                placeholder="Year..."
+                className="w-[90px] xl:w-[117px]"
+                value={yearOne}
+                onChange={e => setYearOne(e.target.value)}
+              />
               <div className="w-[15px] xl:w-[24px] rounded-full h-[2px] bg-hitam-100" />
-              <Input placeholder="Year..." className="w-[90px] xl:w-[117px]" />
-              <Button className="bg-biru-900 px-[26px] xl:px-[38px]">
+              <Input
+                placeholder="Year..."
+                className="w-[90px] xl:w-[117px]"
+                value={yearTwo}
+                onChange={e => setYearTwo(e.target.value)}
+              />
+              <Button
+                className="bg-biru-900 px-[26px] xl:px-[38px]"
+                onClick={handleFilterYear}
+              >
                 Apply
               </Button>
             </div>
             <Input
-              placeholder="Search event name..."
+              value={eventName}
+              onChange={e => setEventName(e.target.value)}
+              placeholder="{Search event} name..."
               className="w-full xl:w-[453px] "
             />
           </div>
