@@ -1,6 +1,11 @@
+'use client';
+
+import { useGetCardStatistics } from '@/hooks/fetch/useGetCardStatistics';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const AchievmentSection = () => {
+  const { data } = useGetCardStatistics();
+
   return (
     <div
       style={{ backgroundImage: `url('/bg-achievment-section.png')` }}
@@ -24,26 +29,32 @@ const AchievmentSection = () => {
               <h4 className="text-[14px] md:text-[24px] xl:text-[32px]">
                 level achievements
               </h4>
-              <h5 className="text-[8px] md:text-[16px] text-hitam-700">
+              <h5 className="text-[8px] md:text-[16px] text-hitam-700 invisible">
                 (2017 - 2023)
               </h5>
             </span>
           </div>
           <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 ">
             <div>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">459</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.ASEAN?.gold_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
               </h4>
             </div>
             <div>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">367</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.ASEAN?.silver_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
               </h4>
             </div>
             <span>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">251</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.ASEAN?.bronze_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
               </h4>
@@ -53,19 +64,25 @@ const AchievmentSection = () => {
         <section className="w-full h-[100px] xl:h-[140px] bg-white px-[10px] xl:px-[92px] flex max-md:flex-col-reverse md:flex-row justify-between items-center rounded-[16px] relative">
           <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] max-md:ml-[40px]">
             <div>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">459</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.ASIAN?.gold_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
               </h4>
             </div>
             <div>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">57</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.ASIAN?.silver_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
               </h4>
             </div>
             <span>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">69</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.ASIAN?.bronze_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
               </h4>
@@ -79,7 +96,7 @@ const AchievmentSection = () => {
               <h4 className="text-[14px] md:text-[24px] xl:text-[32px]">
                 level achievements
               </h4>
-              <h5 className="text-[8px] md:text-[16px] text-hitam-700">
+              <h5 className="text-[8px] md:text-[16px] text-hitam-700 invisible">
                 (2017 - 2023)
               </h5>
             </span>
@@ -104,26 +121,32 @@ const AchievmentSection = () => {
               <h4 className="text-[14px] md:text-[24px] xl:text-[32px]">
                 level achievements
               </h4>
-              <h5 className="text-[8px] md:text-[12px] xl:text-[16px] text-hitam-700">
+              <h5 className="text-[8px] md:text-[12px] xl:text-[16px] text-hitam-700 invisible">
                 (2017 - 2023)
               </h5>
             </span>
           </div>
           <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10">
             <div>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">2</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.WORLD?.gold_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
               </h4>
             </div>
             <div>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">3</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.WORLD?.silver_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
               </h4>
             </div>
             <span>
-              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">5</h3>
+              <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
+                {data?.medal_counts?.WORLD?.bronze_medal_count}
+              </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
               </h4>
