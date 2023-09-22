@@ -35,6 +35,9 @@ const Navbar = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
+  useEffect(() => {
+    setOpenNavbar(false);
+  }, [pathname]);
 
   if (!mounted) return null;
   return (
