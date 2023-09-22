@@ -1,21 +1,17 @@
 'use client';
 
 import moment from 'moment';
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 import CardEvent from '@/components/event/card';
+import EventCountdown from '@/components/event/countdown';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import HeadingText from '@/components/ui/heading-text';
 import { Input } from '@/components/ui/input';
 import { useGetEvents } from '@/hooks/fetch/useGetEvents';
 import { cn, fontAhrefs400 } from '@/lib/utils';
-
-const EventCountdown = dynamic(() => import('@/components/event/countdown'), {
-  ssr: false
-});
 
 const EventPage = () => {
   const [yearOne, setYearOne] = useState('');

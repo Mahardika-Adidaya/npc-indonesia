@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useMediaQuery } from 'react-responsive';
@@ -23,10 +23,17 @@ const Navbar = () => {
   const router = useRouter();
   const isDekstop = useMediaQuery({ query: '(min-width: 1224px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 1223px)' });
+  const [mounted, setMounted] = useState(false);
 
   const [openNavbar, setOpenNavbar] = useState(false);
 
   const { data: sportCategory } = useGetSportsCategory();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <>

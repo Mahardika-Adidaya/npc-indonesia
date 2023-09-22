@@ -1,20 +1,13 @@
 import '@/styles/globals.css';
 
 import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 
+import Footer from '@/components/footer';
 import Maintenance from '@/components/maintenance';
+import Navbar from '@/components/navbar';
 import Providers from '@/lib/react-query-provider';
 import RenderIf from '@/lib/render-if';
 import { cn, isDevMode, isMaintenance } from '@/lib/utils';
-
-const Navbar = dynamic(() => import('@/components/navbar'), {
-  ssr: false
-});
-
-const Footer = dynamic(() => import('@/components/footer'), {
-  ssr: false
-});
 
 export const metadata: Metadata = {
   title: 'National Paralympic Committee of Indonesia',

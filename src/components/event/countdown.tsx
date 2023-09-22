@@ -20,6 +20,14 @@ const EventCountdown = ({ eventCountDown }: { eventCountDown: any }) => {
     return () => clearInterval(interval);
   }, []);
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <div className="w-[100px] xl:w-[130px] flex flex-col">
       <div

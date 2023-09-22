@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { FaLocationDot, FaPhoneVolume } from 'react-icons/fa6';
 import { HiMail } from 'react-icons/hi';
 import { useMediaQuery } from 'react-responsive';
@@ -9,6 +10,14 @@ import RenderIf from '@/lib/render-if';
 const Footer = () => {
   const isDekstop = useMediaQuery({ query: '(min-width: 1224px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 1223px)' });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <RenderIf isTrue={isMobile}>

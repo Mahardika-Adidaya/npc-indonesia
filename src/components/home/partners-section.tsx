@@ -1,12 +1,8 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Slider from 'react-slick';
 
 import HeadingText from '@/components/ui/heading-text';
-
-const Slider = dynamic(() => import('react-slick'), {
-  ssr: false
-});
 
 const PartnersSection = () => {
   const settings = {

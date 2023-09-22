@@ -1,10 +1,19 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { useGetCardStatistics } from '@/hooks/fetch/useGetCardStatistics';
 import { cn, fontAhrefs400 } from '@/lib/utils';
 
 const AchievmentSection = () => {
   const { data } = useGetCardStatistics();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <div
