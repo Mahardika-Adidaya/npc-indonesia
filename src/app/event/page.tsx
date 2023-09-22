@@ -110,14 +110,24 @@ const EventPage = () => {
                 placeholder="Year..."
                 className="w-[90px] xl:w-[117px]"
                 value={yearOne}
-                onChange={e => setYearOne(e.target.value)}
+                onChange={e => {
+                  const val = e.target.value;
+                  if (/^\d+$/.test(val) || val === '') {
+                    setYearOne(val);
+                  }
+                }}
               />
               <div className="w-[15px] xl:w-[24px] rounded-full h-[2px] bg-hitam-100" />
               <Input
                 placeholder="Year..."
                 className="w-[90px] xl:w-[117px]"
                 value={yearTwo}
-                onChange={e => setYearTwo(e.target.value)}
+                onChange={e => {
+                  const val = e.target.value;
+                  if (/^\d+$/.test(val) || val === '') {
+                    setYearTwo(val);
+                  }
+                }}
               />
               <Button
                 className="bg-biru-900 px-[26px] xl:px-[38px]"
