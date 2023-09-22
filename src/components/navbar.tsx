@@ -24,7 +24,6 @@ const Navbar = () => {
   const isDekstop = useMediaQuery({ query: '(min-width: 1224px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 1223px)' });
   const [mounted, setMounted] = useState(false);
-
   const [openNavbar, setOpenNavbar] = useState(false);
 
   const { data: sportCategory } = useGetSportsCategory();
@@ -33,13 +32,11 @@ const Navbar = () => {
   const toggleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   };
-
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return null;
-
   return (
     <>
       <RenderIf isTrue={isMobile}>
@@ -108,7 +105,7 @@ const Navbar = () => {
               </div>
               <div className="mt-[26px] flex justify-between">
                 <div className="flex gap-x-[14px] items-center">
-                  <Link href="#">
+                  <Link href="https://www.facebook.com/NPCIndonesiaPusat?mibextid=LQQJ4d">
                     <img
                       src="/socmeds/logo-facebook.png"
                       alt="Facebook"
@@ -116,7 +113,7 @@ const Navbar = () => {
                       width={20}
                     />
                   </Link>
-                  <Link href="#">
+                  <Link href="https://instagram.com/npcindonesia?igshid=MzRlODBiNWFlZA==">
                     <img
                       src="/socmeds/logo-instagram.png"
                       alt="Instagram"
@@ -124,7 +121,7 @@ const Navbar = () => {
                       width={24}
                     />
                   </Link>
-                  <Link href="#">
+                  <Link href="https://www.youtube.com/@npcindonesia9343">
                     <img
                       src="/socmeds/logo-youtube.png"
                       alt="YouTube"
@@ -132,7 +129,7 @@ const Navbar = () => {
                       width={24}
                     />
                   </Link>
-                  <Link href="#">
+                  {/* <Link href="#">
                     <img
                       src="/socmeds/logo-twitter.png"
                       alt="Twitter"
@@ -147,7 +144,7 @@ const Navbar = () => {
                       height={24}
                       width={24}
                     />
-                  </Link>
+                  </Link> */}
                 </div>
                 {/* <div className="w-[1px] bg-hitam-400" />
                 <Select>
@@ -184,7 +181,7 @@ const Navbar = () => {
               </div>
               <div className="flex gap-x-[18px]">
                 <div className="flex gap-x-[14px] items-center">
-                  <Link href="#">
+                  <Link href="https://www.facebook.com/NPCIndonesiaPusat?mibextid=LQQJ4d">
                     <img
                       src="/socmeds/logo-facebook.png"
                       alt="Facebook"
@@ -192,7 +189,7 @@ const Navbar = () => {
                       width={20}
                     />
                   </Link>
-                  <Link href="#">
+                  <Link href="https://instagram.com/npcindonesia?igshid=MzRlODBiNWFlZA==">
                     <img
                       src="/socmeds/logo-instagram.png"
                       alt="Instagram"
@@ -200,7 +197,7 @@ const Navbar = () => {
                       width={24}
                     />
                   </Link>
-                  <Link href="#">
+                  <Link href="https://www.youtube.com/@npcindonesia9343">
                     <img
                       src="/socmeds/logo-youtube.png"
                       alt="YouTube"
@@ -208,7 +205,7 @@ const Navbar = () => {
                       width={24}
                     />
                   </Link>
-                  <Link href="#">
+                  {/* <Link href="#">
                     <img
                       src="/socmeds/logo-twitter.png"
                       alt="Twitter"
@@ -223,7 +220,7 @@ const Navbar = () => {
                       height={24}
                       width={24}
                     />
-                  </Link>
+                  </Link> */}
                 </div>
                 {/* <div className="w-[1px] bg-hitam-400" />
                 <Select>
