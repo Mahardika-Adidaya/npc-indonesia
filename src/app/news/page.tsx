@@ -40,7 +40,7 @@ const NewsPage = () => {
               })}
           </div>
         </section>
-        <section>
+        {/* <section>
           <h2 className="text-[20px] md:text-[26px] xl:text-[38px] font-[700]">
             Top Trending News
           </h2>
@@ -64,7 +64,7 @@ const NewsPage = () => {
                 );
               })}
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
