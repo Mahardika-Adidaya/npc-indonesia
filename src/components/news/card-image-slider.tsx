@@ -11,7 +11,7 @@ export const CardImageSlider: React.FC<CardImageSliderProps> = ({
 }) => {
   return (
     <div
-      className="my-1 p-[5px] bg-center xl:p-2 rounded-[8px] bg-cover mx-[18px] relative overflow-hidden w-[167px] xl:w-[228px] h-[83px] xl:h-[113px] cursor-pointer"
+      className="my-1 p-[5px] bg-center xl:p-2 rounded-[8px] bg-cover md:mx-[18px] relative overflow-hidden w-full xl:w-[228px] h-[83px] xl:h-[113px] cursor-pointer"
       style={{
         backgroundImage: `url('${
           process.env.NEXT_PUBLIC_API_IMAGE + data.image

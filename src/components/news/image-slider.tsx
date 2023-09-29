@@ -59,7 +59,7 @@ const ImageSlider: React.FC<ImageSliderProps> = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-1 pb-2">
+      <div className=" gap-x-3 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-1 pb-2">
         {dataGetTopNews.map((data: any, index: number) => {
           return (
             <CardImageSlider

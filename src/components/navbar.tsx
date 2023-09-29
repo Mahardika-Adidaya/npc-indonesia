@@ -185,30 +185,30 @@ const Navbar = () => {
               </div>
               <div className="flex gap-x-[18px]">
                 <div className="flex gap-x-[14px] items-center">
-                  <Link href="https://www.facebook.com/NPCIndonesiaPusat?mibextid=LQQJ4d">
+                  <a href="https://www.facebook.com/NPCIndonesiaPusat?mibextid=LQQJ4d">
                     <img
                       src="/socmeds/logo-facebook.png"
                       alt="Facebook"
                       height={20}
                       width={20}
                     />
-                  </Link>
-                  <Link href="https://instagram.com/npcindonesia?igshid=MzRlODBiNWFlZA==">
+                  </a>
+                  <a href="https://instagram.com/npcindonesia?igshid=MzRlODBiNWFlZA==">
                     <img
                       src="/socmeds/logo-instagram.png"
                       alt="Instagram"
                       height={24}
                       width={24}
                     />
-                  </Link>
-                  <Link href="https://www.youtube.com/@npcindonesia9343">
+                  </a>
+                  <a href="https://www.youtube.com/@npcindonesia9343">
                     <img
                       src="/socmeds/logo-youtube.png"
                       alt="YouTube"
                       height={24}
                       width={24}
                     />
-                  </Link>
+                  </a>
                   {/* <Link href="#">
                     <img
                       src="/socmeds/logo-twitter.png"

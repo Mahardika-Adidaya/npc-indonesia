@@ -139,7 +139,7 @@ const EventPage = () => {
             <Input
               value={eventName}
               onChange={e => setEventName(e.target.value)}
-              placeholder="{Search event} name..."
+              placeholder="Search event name..."
               className="w-full xl:w-[453px] "
             />
           </div>
