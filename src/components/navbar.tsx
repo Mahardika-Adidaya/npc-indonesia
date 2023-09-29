@@ -78,6 +78,7 @@ const Navbar = () => {
                   Sport
                   {showSubMenu && (
                     <div className="flex flex-col mt-2 ml-4 gap-y-2 h-48 overflow-y-auto">
+                      <Link href="/sport">Sport</Link>
                       {sportCategory &&
                         sportCategory.map((category: any) => {
                           if (category.name_sport !== 'General News') {
