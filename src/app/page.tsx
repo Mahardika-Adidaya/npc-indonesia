@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden w-full">
       <div className="flex justify-center mb-[26px] md:mb-[46px] mt-[18px] px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto">
-        <Player url={['https://youtu.be/EuiRfzRu17c']} />
+        <Player url={['https://youtu.be/n2Du9lltf5A']} />
       </div>
       <div className="m-full max-w-[1440px] flex flex-col  md:mt-[34px] xl:mt-[46px] mb-[26px] md:mb-[75px] mx-auto px-[8px] lg:px-[50px] md:px-[30px]">
         <HeadingText>Popular News</HeadingText>
