@@ -102,10 +102,12 @@ const Navbar = () => {
               </div>
               <div className="w-full h-[0.2px] bg-hitam-300 my-4" />
               <div className="flex flex-col space-y-3 text-[12px] font-[400] text-hitam-600">
-                <Link href="#">About Paralympic</Link>
+                <Link href="/about">About Paralympic</Link>
                 <Link href="#">Office Info</Link>
-                <Link href="#">Organization Structure</Link>
-                <Link href="#">Help</Link>
+                <Link href="/organization-structure">
+                  Organization Structure
+                </Link>
+                <Link href="/help">Help</Link>
               </div>
               <div className="mt-[26px] flex justify-between">
                 <div className="flex gap-x-[14px] items-center">
@@ -170,16 +172,19 @@ const Navbar = () => {
           <section className="bg-hitam-50">
             <div className="w-full max-w-[1440px] px-[50px] py-[14px] flex items-center justify-between mx-auto">
               <div className="flex gap-x-[38px] text-[14px] font-[400] text-hitam-800">
-                <Link href="#" className="hover:text-hitam-600">
+                <Link href="/about" className="hover:text-hitam-600">
                   About Paralympic
                 </Link>
                 <Link href="#" className="hover:text-hitam-600">
                   Office Info
                 </Link>
-                <Link href="#" className="hover:text-hitam-600">
+                <Link
+                  href="/organization-structure"
+                  className="hover:text-hitam-600"
+                >
                   Organization Structure
                 </Link>
-                <Link href="#" className="hover:text-hitam-600">
+                <Link href="/help" className="hover:text-hitam-600">
                   Help
                 </Link>
               </div>
@@ -189,24 +194,24 @@ const Navbar = () => {
                     <img
                       src="/socmeds/logo-facebook.png"
                       alt="Facebook"
-                      height={20}
-                      width={20}
+                      height={30}
+                      width={30}
                     />
                   </a>
                   <a href="https://instagram.com/npcindonesia?igshid=MzRlODBiNWFlZA==">
                     <img
                       src="/socmeds/logo-instagram.png"
                       alt="Instagram"
-                      height={24}
-                      width={24}
+                      height={34}
+                      width={34}
                     />
                   </a>
                   <a href="https://www.youtube.com/@npcindonesia9343">
                     <img
                       src="/socmeds/logo-youtube.png"
                       alt="YouTube"
-                      height={24}
-                      width={24}
+                      height={34}
+                      width={34}
                     />
                   </a>
                   {/* <Link href="#">
