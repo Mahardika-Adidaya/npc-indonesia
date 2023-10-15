@@ -95,7 +95,11 @@ const EventPage = () => {
                   <CardEvent
                     key={data?.id}
                     variant="biru"
-                    image={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                    image={
+                      data.image
+                        ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                        : './logo-npci.png'
+                    }
                     title={data?.title}
                     subtitle={data?.location}
                     closing={data?.closing}
@@ -179,7 +183,11 @@ const EventPage = () => {
                         key={index}
                       >
                         <img
-                          src={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                          src={
+                            data.image
+                              ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                              : './logo-npci.png'
+                          }
                           className="h-[60px] md:h-[111px]"
                           alt="Logo Event"
                         />

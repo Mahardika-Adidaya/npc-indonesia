@@ -24,7 +24,11 @@ const SportPage = () => {
                 return (
                   <SportCardOne
                     key={data?.id}
-                    image={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                    image={
+                      data.image
+                        ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                        : './logo-npci.png'
+                    }
                     name={data?.name_sport}
                     id={data?.id}
                   />

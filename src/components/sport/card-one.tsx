@@ -18,7 +18,7 @@ const SportCardOne: FC<SportCardProps> = ({ name, image, className, id }) => {
         height={270}
         width={270}
         alt={name}
-        src={image}
+        src={image ? image : './logo-npci.png'}
         className="rounded-[16px] h-[139px] xl:h-[270px] w-[139px] xl:w-[270px] object-cover"
       />
       <h3 className="text-center font-[500] max-w-[139px] xl:max-w-[270px] text-[16px] xl:text-[24px]">

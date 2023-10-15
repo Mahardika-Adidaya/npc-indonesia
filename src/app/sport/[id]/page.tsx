@@ -119,7 +119,7 @@ const SportCategoryPage = () => {
                       key={data?.id}
                       title={data?.title}
                       date={data?.createdAt}
-                      image={data?.image}
+                      image={data.image ? data?.image : './logo-npci.png'}
                       newsType={dataGetDetailSport?.name_sport}
                     />
                   );
