@@ -70,7 +70,11 @@ const EventPage = () => {
                   <CardEvent
                     key={data?.id}
                     variant="hijau"
-                    image={process.env.NEXT_PUBLIC_API_IMAGE + data?.image}
+                    image={
+                      data.image
+                        ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                        : './logo-npci.png'
+                    }
                     title={data?.title}
                     subtitle={data?.location}
                     closing={data?.closing}

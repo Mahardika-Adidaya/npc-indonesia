@@ -25,7 +25,10 @@ const DetailAthletePage = () => {
           <div className="flex gap-x-[24px]">
             <img
               src={
-                process.env.NEXT_PUBLIC_API_IMAGE + dataGetAthleteById?.image
+                dataGetAthleteById.image
+                  ? process.env.NEXT_PUBLIC_API_IMAGE +
+                    dataGetAthleteById?.image
+                  : './logo-npci.png'
               }
               alt="Athlete"
               className="rounded-full h-[128px] w-[128px] md:h-[168px] md:w-[168px] xl:h-[294px] xl:w-[294px] bg-cover outline outline-hitam-50"

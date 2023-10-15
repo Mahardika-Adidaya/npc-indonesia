@@ -33,7 +33,7 @@ const NewsPage = () => {
                     key={data.id}
                     title={data?.title}
                     date={data?.createdAt}
-                    image={data?.image}
+                    image={data.image ? data?.image : './logo-npci.png'}
                     newsType={data?.news_type?.name_sport}
                   />
                 );

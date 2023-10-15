@@ -28,7 +28,11 @@ const DetailNewsPage = () => {
             </h3>
           </span>
           <img
-            src={process.env.NEXT_PUBLIC_API_IMAGE + newsData?.data?.image}
+            src={
+              newsData.data.image
+                ? process.env.NEXT_PUBLIC_API_IMAGE + newsData?.data?.image
+                : './logo-npci.png'
+            }
             alt="news"
             width={1300}
             height={624}
