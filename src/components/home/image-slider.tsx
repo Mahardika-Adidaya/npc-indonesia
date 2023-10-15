@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Progress } from '@/components/ui/progress';
 import { useGetTopNews } from '@/hooks/fetch/news/useGetTopNews';
 import { cn } from '@/lib/utils';
+import moment from 'moment';
 
 const ImageSliderHome: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -90,7 +91,9 @@ const ImageSliderHome: React.FC = () => {
               {dataGetTopNews[currentSlide].title}
             </h1>
             <div className="text-[8px] xl:text-[16px] flex gap-x-[8px] items-center">
-              <h4 className="font-[400] text-white">9 August 2023</h4>
+              <h4 className="font-[400] text-white">
+                {moment(dataGetTopNews[0].date).format('DD MMM YYYY')}
+              </h4>
               <span className="w-[6px] h-[6px] rounded-full bg-white" />
               <h4 className="font-[500] text-white">
                 {dataGetTopNews[currentSlide].news_type.name_sport}

@@ -16,7 +16,7 @@ export default function OrganizationStructure() {
         <div
           className="text-black text-2xl font-light"
           dangerouslySetInnerHTML={{
-            __html: dataHeader?.organizatonal_structure
+            __html: dataHeader?.organization_structure
           }}
         ></div>
       </div>

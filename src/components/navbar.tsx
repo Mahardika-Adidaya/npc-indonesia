@@ -103,7 +103,7 @@ const Navbar = () => {
               <div className="w-full h-[0.2px] bg-hitam-300 my-4" />
               <div className="flex flex-col space-y-3 text-[12px] font-[400] text-hitam-600">
                 <Link href="/about">About Paralympic</Link>
-                <Link href="#">Office Info</Link>
+                {/* <Link href="#">Office Info</Link> */}
                 <Link href="/organization-structure">
                   Organization Structure
                 </Link>
@@ -175,9 +175,9 @@ const Navbar = () => {
                 <Link href="/about" className="hover:text-hitam-600">
                   About Paralympic
                 </Link>
-                <Link href="#" className="hover:text-hitam-600">
+                {/* <Link href="#" className="hover:text-hitam-600">
                   Office Info
-                </Link>
+                </Link> */}
                 <Link
                   href="/organization-structure"
                   className="hover:text-hitam-600"
