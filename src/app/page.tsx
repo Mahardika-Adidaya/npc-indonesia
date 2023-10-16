@@ -5,8 +5,11 @@ import PartnersSection from '@/components/home/partners-section';
 import Player from '@/components/player';
 import HeadingText from '@/components/ui/heading-text';
 import { useGetHeader } from '@/hooks/fetch/header/useGetHeader';
+import { useState } from 'react';
+
 const Home = () => {
   const { data: dataHeader, isLoading: isLoadingHeader } = useGetHeader();
+  const [source, setSource] = useState('');
 
   return (
     <div className="overflow-hidden w-full">
@@ -15,7 +18,11 @@ const Home = () => {
         <ImageSliderHome />
       </div>
       <div className="flex justify-center mb-[26px] md:mb-[46px] mt-[18px] px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto">
-        <Player url={[dataHeader?.video_link]} />
+        <Player
+          url={[
+            dataHeader ? dataHeader.link_video : 'https://youtu.be/n2Du9lltf5A'
+          ]}
+        />
       </div>
       <AchievmentSection />
       <PartnersSection />
