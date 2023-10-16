@@ -15,7 +15,7 @@ const Home = () => {
         <ImageSliderHome />
       </div>
       <div className="flex justify-center mb-[26px] md:mb-[46px] mt-[18px] px-2 md:px-[30px] xl:px-[50px] w-full max-w-[1440px] mx-auto">
-        <Player url={[dataHeader.video_link]} />
+        <Player url={[dataHeader?.video_link]} />
       </div>
       <AchievmentSection />
       <PartnersSection />
