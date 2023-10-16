@@ -5,10 +5,6 @@ import { useGetHeader } from '@/hooks/fetch/header/useGetHeader';
 export default function OrganizationStructure() {
   const { data: dataHeader, isLoading: isLoadingHeader } = useGetHeader();
 
-  if (!dataHeader) {
-    return null;
-  }
-
   return (
     <div className="pt-[86px] pb-[82px] px-[51px]">
       <HeadingText>Organization Structure</HeadingText>

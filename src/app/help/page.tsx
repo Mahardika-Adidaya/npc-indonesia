@@ -6,9 +6,6 @@ import React from 'react';
 export default function Help() {
   const { data: dataHeader, isLoading: isLoadingHeader } = useGetHeader();
 
-  if (!dataHeader) {
-    return null;
-  }
   return (
     <div className="pt-[86px] pb-[82px] px-[51px]">
       <HeadingText>Help</HeadingText>
@@ -53,7 +50,7 @@ export default function Help() {
               }
               className="px-[23px] py-[11px] bg-[#008638] text-white text-[14px] rounded-lg"
             >
-              Send Mssage
+              Send Message
             </button>
           </div>
         </div>
