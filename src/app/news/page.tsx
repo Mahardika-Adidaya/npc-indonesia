@@ -19,7 +19,7 @@ const NewsPage = () => {
             The most popular news you should know to keep up with the latest
             news
           </h3>
-          <div className="flex overflow-scroll gap-x-[30px] scrollbar-hide">
+          <div className="grid grid-cols-3 gap-x-[30px] gap-y-[30px] scrollbar-hide">
             {dataGetNews &&
               dataGetNews.length > 0 &&
               dataGetNews.map((data: any) => {
