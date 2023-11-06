@@ -72,7 +72,7 @@ const EventPage = () => {
                     variant="hijau"
                     image={
                       data.image
-                        ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                        ? process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + data?.image
                         : './logo-npci.png'
                     }
                     title={data?.title}
@@ -97,7 +97,7 @@ const EventPage = () => {
                     variant="biru"
                     image={
                       data.image
-                        ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                        ? process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + data?.image
                         : './logo-npci.png'
                     }
                     title={data?.title}
@@ -185,7 +185,7 @@ const EventPage = () => {
                         <img
                           src={
                             data.image
-                              ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                              ? process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + data?.image
                               : './logo-npci.png'
                           }
                           className="h-[60px] md:h-[111px]"

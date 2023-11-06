@@ -21,7 +21,7 @@ const SportCardTwo: FC<SportCardTwoProps> = ({
     <Link href={link}>
       <div className="w-[169px] xl:w-[417px] border border-hitam-100 shadow-md overflow-hidden rounded-[9px] font-poppins">
         <img
-          src={process.env.NEXT_PUBLIC_API_IMAGE + image}
+          src={process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + image}
           alt="news"
           width={417}
           height={324}

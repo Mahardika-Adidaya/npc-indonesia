@@ -26,7 +26,7 @@ const DetailAthletePage = () => {
             <img
               src={
                 dataGetAthleteById.image
-                  ? process.env.NEXT_PUBLIC_API_IMAGE +
+                  ?process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD +
                     dataGetAthleteById?.image
                   : './logo-npci.png'
               }

@@ -28,7 +28,7 @@ const AthletesSection: FC<AthletesSectionProps> = ({ category, datas }) => {
               name={data?.athletes_name}
               src={
                 data.image
-                  ? process.env.NEXT_PUBLIC_API_IMAGE + data?.image
+                  ? process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + data?.image
                   : './logo-npci.png'
               }
               url={`athletes/${data.id}`}

@@ -66,7 +66,7 @@ const ImageSliderHome: React.FC = () => {
         className="w-full h-[233px] md:h-[422px] xl:h-[598px] bg-cover rounded-[4px] md:rounded-[20px] relative overflow-hidden"
         style={{
           backgroundImage: `url('${
-            process.env.NEXT_PUBLIC_API_IMAGE +
+            process.env.REACT_APP_MODE == "dev" ? process.env.REACT_APP_API_IMAGE_URL_STAGING : process.env.REACT_APP_API_IMAGE_URL_PROD +
             dataGetTopNews[currentSlide].image
           }')`
         }}

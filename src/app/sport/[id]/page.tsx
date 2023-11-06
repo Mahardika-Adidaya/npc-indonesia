@@ -36,7 +36,7 @@ const SportCategoryPage = () => {
         className="h-[144px] xl:h-[345px] w-full bg-cover flex justify-center"
         style={{
           backgroundImage: `url(${
-            process.env.NEXT_PUBLIC_API_IMAGE + dataGetDetailSport?.image
+            process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + dataGetDetailSport?.image
           })`,
           backgroundSize: 'cover'
         }}
