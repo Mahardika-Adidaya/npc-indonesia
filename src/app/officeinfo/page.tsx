@@ -27,7 +27,7 @@ const Page = () => {
         </div>
       </div>
       <div className="h-[540px] w-full relative z-10">
-        <MapComponent />
+        {/* <MapComponent /> */}
       </div>
     </div>
   );
