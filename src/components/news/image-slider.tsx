@@ -15,13 +15,13 @@ const ImageSlider: React.FC<ImageSliderProps> = () => {
   const [selectedImage, setSelectedImage] = useState<string>('');
 
   const handleCardClick = (image: string) => {
-    setSelectedImage( process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_BASE_URL_STAGING + image : process.env.NEXT_PUBLIC_API_BASE_URL_PROD + image);
+    setSelectedImage( process.env.NEXT_PUBLIC_API_BASE_URL + image);
   };
 
   useEffect(() => {
     if (dataGetTopNews !== undefined) {
       setSelectedImage(
-        process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_BASE_URL_STAGING : process.env.NEXT_PUBLIC_API_BASE_URL_PROD + dataGetTopNews[0].image
+        process.env.NEXT_PUBLIC_API_BASE_URL + dataGetTopNews[0].image
       );
     }
   }, [dataGetTopNews]);

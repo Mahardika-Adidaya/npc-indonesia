@@ -28,7 +28,7 @@ const DetailNewsPage = () => {
             </h3>
           </span>
           <img
-            src={process.env.NEXT_PUBLIC_MODE == "dev" ? process.env.NEXT_PUBLIC_API_IMAGE_STAGING : process.env.NEXT_PUBLIC_API_IMAGE_PROD + newsData?.data?.image}
+            src={process.env.NEXT_PUBLIC_API_IMAGE + newsData?.data?.image}
             alt="news"
             width={1300}
             height={624}
