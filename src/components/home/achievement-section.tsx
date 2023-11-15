@@ -32,7 +32,7 @@ const AchievmentSection = () => {
           />
           <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
-              ASEAN
+              Paralympic
             </h3>
             <span className="xl:bottom-2 bottom-1 absolute">
               <h4 className="text-[14px] md:text-[24px] xl:text-[32px]">
@@ -46,7 +46,7 @@ const AchievmentSection = () => {
           <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10 ">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.ASEAN?.gold_medal_count}
+                {/* {data?.medal_counts?.ASEAN?.gold_medal_count} */}2
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
@@ -54,7 +54,7 @@ const AchievmentSection = () => {
             </div>
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.ASEAN?.silver_medal_count}
+                {/* {data?.medal_counts?.ASEAN?.silver_medal_count} */}3
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
@@ -62,7 +62,7 @@ const AchievmentSection = () => {
             </div>
             <span>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.ASEAN?.bronze_medal_count}
+                {/* {data?.medal_counts?.ASEAN?.bronze_medal_count} */}4
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
@@ -74,7 +74,8 @@ const AchievmentSection = () => {
           <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] max-md:ml-[40px]">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.ASIAN?.gold_medal_count}
+                {/* {data?.medal_counts?.ASIAN?.gold_medal_count} */}
+                29
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
@@ -82,7 +83,8 @@ const AchievmentSection = () => {
             </div>
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.ASIAN?.silver_medal_count}
+                {/* {data?.medal_counts?.ASIAN?.silver_medal_count} */}
+                30
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
@@ -90,7 +92,8 @@ const AchievmentSection = () => {
             </div>
             <span>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.ASIAN?.bronze_medal_count}
+                {/* {data?.medal_counts?.ASIAN?.bronze_medal_count} */}
+                36
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
@@ -99,7 +102,7 @@ const AchievmentSection = () => {
           </div>
           <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
-              ASIAN
+              Asian Para Games
             </h3>
             <span className="xl:bottom-2 bottom-1 absolute">
               <h4 className="text-[14px] md:text-[24px] xl:text-[32px]">
@@ -124,7 +127,7 @@ const AchievmentSection = () => {
           />
           <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
-              WORLD
+              ASEAN Para Games
             </h3>
             <span className="xl:bottom-2 bottom-1 absolute">
               <h4 className="text-[14px] md:text-[24px] xl:text-[32px]">
@@ -138,7 +141,8 @@ const AchievmentSection = () => {
           <div className="flex gap-x-[24px] md:gap-x-[64px] xl:gap-x-[98px] ml-10">
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.WORLD?.gold_medal_count}
+                {/* {data?.medal_counts?.WORLD?.gold_medal_count} */}
+                159
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Gold Medals
@@ -146,7 +150,8 @@ const AchievmentSection = () => {
             </div>
             <div>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.WORLD?.silver_medal_count}
+                {/* {data?.medal_counts?.WORLD?.silver_medal_count} */}
+                148
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Silver Medals
@@ -154,7 +159,8 @@ const AchievmentSection = () => {
             </div>
             <span>
               <h3 className="text-[20px] md:text-[32px] xl:text-[48px]">
-                {data?.medal_counts?.WORLD?.bronze_medal_count}
+                {/* {data?.medal_counts?.WORLD?.bronze_medal_count} */}
+                94
               </h3>
               <h4 className="text-[8px] md:text-[12px] xl:text-[16px] font-[700] font-helveticaNeue text-hitam-700">
                 Bronze Medals
