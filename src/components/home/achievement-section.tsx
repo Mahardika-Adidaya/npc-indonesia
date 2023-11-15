@@ -30,7 +30,7 @@ const AchievmentSection = () => {
             src="/trophies/trophy-left-one.png"
             className="h-[77px] xl:h-[182px] absolute left-0 bottom-4 md:bottom-3 xl:bottom-0"
           />
-          <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
+          <div className="font-[400] md:ml-[150px] lg:ml-[120px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
               Paralympic
             </h3>
@@ -125,7 +125,7 @@ const AchievmentSection = () => {
             src="/trophies/trophy-left-two.png"
             className="h-[77px] xl:h-[182px] absolute left-0 bottom-4 md:bottom-3 xl:bottom-0"
           />
-          <div className="font-[400] md:ml-[150px] lg:ml-[200px] ml-[200px] relative w-full h-full">
+          <div className="font-[400] md:ml-[150px] lg:ml-[120px] ml-[200px] relative w-full h-full">
             <h3 className="text-[20px] xl:text-[64px] text-hijau-400 xl:absolute xl:-top-3">
               ASEAN Para Games
             </h3>
